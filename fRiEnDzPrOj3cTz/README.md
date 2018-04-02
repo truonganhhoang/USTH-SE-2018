@@ -6,8 +6,8 @@ Team fRiEnDz
 ``
 Project: 
 ``
-fLaPPy biRdZ uPdAtEd
-    * first function: thE biRd m0vEmEnT
+* fLaPPy biRdZ uPdAtEd
+* first function: thE biRd m0vEmEnT
     
 
 
