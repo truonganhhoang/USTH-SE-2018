@@ -1,4 +1,6 @@
-# USTH SE 2018 
+# USTH SE 2018
+team Protoss
+ 
 - The project is inspired by reddit so we are going to build a simple reddit app
 
 - First Function: 
