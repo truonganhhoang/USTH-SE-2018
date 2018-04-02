@@ -1,4 +1,2 @@
 # USTH SE 2018 
-blah blah
-bvlah blah 
-blah blah
+Just editing the readme file, nothing here yet
