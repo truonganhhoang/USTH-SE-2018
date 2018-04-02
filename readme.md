@@ -1,5 +1,5 @@
 # USTH SE 2018 
-PHAM VAN DUAN
+PHAM VAN DUAN -BI7-034
 ++++++PROJECT+++++++
 
 -programming  game bird with java 
