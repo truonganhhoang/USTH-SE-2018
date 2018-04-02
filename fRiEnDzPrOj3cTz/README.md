@@ -4,8 +4,9 @@
 
 
 
-* first function: thE biRd m0vEmEnT
-* inspired by: Flappy Bird and Mario
+* first function: the bird movement
+* inspired by: Flappy Bird and http://stabyourself.net/mari0/
+* using: python
     
 
 
