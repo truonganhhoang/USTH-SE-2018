@@ -1,18 +1,17 @@
 # USTH Software Engineering 2018
-
+Team: fRiEnDz
 ## Project: fLaPPy biRdZ uPdAtEd
+
 
 
 * first function: thE biRd m0vEmEnT
     
 
-```bash
-Team fRiEnDz
-```
 
-``
-Members:
-``
+
+
+## Members:
+
 * Duong Quoc Tue - USTHBI7-156
 * Ha Huy Binh - USTHBI7-024
 * Nguyen Minh Duong - USTHBI7-048
