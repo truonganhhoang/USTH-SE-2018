@@ -1,15 +1,14 @@
 # USTH Software Engineering 2018
 
-```bash
-Team fRiEnDz
-```
-
-## Project: **fLaPPy biRdZ uPdAtEd**
+## Project: fLaPPy biRdZ uPdAtEd
 
 
 * first function: thE biRd m0vEmEnT
     
 
+```bash
+Team fRiEnDz
+```
 
 ``
 Members:
