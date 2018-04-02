@@ -3,10 +3,10 @@
 ```bash
 Team fRiEnDz
 ```
-``
-Project: 
-``
-* fLaPPy biRdZ uPdAtEd
+
+## Project: **fLaPPy biRdZ uPdAtEd**
+
+
 * first function: thE biRd m0vEmEnT
     
 
