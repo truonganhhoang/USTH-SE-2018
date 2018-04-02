@@ -4,7 +4,7 @@
 * using: [Python](https://www.python.org/)
 * first function: the bird movement
 ## Team: fRiEnDz
-## Members:
+**Members:**
 * Duong Quoc Tue - USTHBI7-156
 * Ha Huy Binh - USTHBI7-024
 * Nguyen Minh Duong - USTHBI7-048
