@@ -1,5 +1,5 @@
 # USTH Software Engineering 2018
-## Team: fRiEnDz
+## Team: ~~fRiEnDz~~
 ## Project: nOt fLaPpY biRdZ
 
 
