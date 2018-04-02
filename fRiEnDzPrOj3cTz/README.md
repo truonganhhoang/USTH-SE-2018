@@ -5,6 +5,7 @@
 
 
 * first function: thE biRd m0vEmEnT
+* inspired by: Flappy Bird and Mario
     
 
 
