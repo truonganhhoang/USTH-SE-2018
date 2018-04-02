@@ -1,6 +1,6 @@
 # USTH Software Engineering 2018
 
-`
+`bash
 Team fRiEnDz
 `
 
