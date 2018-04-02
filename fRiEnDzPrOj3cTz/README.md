@@ -5,9 +5,9 @@
 
 
 * first function: the bird movement
-* inspired by: Flappy Bird and http://stabyourself.net/mari0/
-* using: python
-    
+* inspired by: Flappy Bird and [Mari0](http://stabyourself.net/mari0/)
+* using: [Python](https://www.python.org/)
+    
 
 
 
