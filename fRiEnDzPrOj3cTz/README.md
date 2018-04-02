@@ -3,6 +3,13 @@
 ```bash
 Team fRiEnDz
 ```
+``
+Project: 
+``
+fLaPPy biRdZ uPdAtEd
+    * first function: thE biRd m0vEmEnT
+    
+
 
 ``
 Members:
@@ -12,5 +19,3 @@ Members:
 * Nguyen Minh Duong - USTHBI7-048
 * Le Minh Anh - USTHBI7-007
     
-    * Project: fLaPPy biRdZ uPdAtEd
-    * first function: thE biRd m0vEmEnT
