@@ -1,12 +1,10 @@
 import pygame
 from pygame.locals import *
 
-pygame.init()
-
-FPS = 60
 SCREENWIDTH = 800
 SCREENHEIGHT = 600
 
+pygame.init()
 
 screen = pygame.display.set_mode((SCREENWIDTH,SCREENHEIGHT))
 pygame.display.set_caption('Hello World')
@@ -20,11 +18,4 @@ while True:
         text = font.render("Hello World!...",0,(255,100,200))  
         screen.blit(text,(180,100))
                       
-    pygame.display.update() 
-
-
-
-
-
-
-
+    pygame.display.update()
