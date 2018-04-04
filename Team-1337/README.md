@@ -19,4 +19,4 @@ Use command
 ```bash
 php artisan server
 ```
-And then, in your favorite browser, visit the following URL [[following URL “http://localhost:8000/hello-world”][http://localhost:8000/hello-world]]
+And then, in your favorite browser, visit the following URL [following URL “http://localhost:8000/hello-world”](http://localhost:8000/hello-world)
