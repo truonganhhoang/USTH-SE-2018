@@ -1,8 +1,4 @@
-# USTH SE 2018 
-Just editing the readme file, nothing here yet
+# Repo of Software Engineering course at USTH 2018
 
-- Group members: Le Huy Duc-036, Cao Phuong Linh-091, Bui Vu Huy-082, Huynh Vinh Nam-114
-- Project: make a game
-- Inspire from: Megaman x4
-+ First function: Game menu, animating sprites
-+ Framework: just Java
+Each group create a folder with name is the name of the group. A readme.md file in each folder should describe the project of that group.
+
