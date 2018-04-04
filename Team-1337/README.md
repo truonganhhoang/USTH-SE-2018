@@ -19,3 +19,4 @@ Use command
 ```bash
 php artisan server
 ```
+And then, in your favorite browser, visit the following URL [http://localhost:8000/hello-world]
