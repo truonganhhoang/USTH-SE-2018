@@ -13,3 +13,9 @@ Members:
 * Framework: PHP Laravel
 * Added feature: Facebook streaming.
 * First feature: Login and profile page. Due date: 16/4/2018.
+
+## Run the app
+Use command
+```bash
+php artisan server
+```
