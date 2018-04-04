@@ -17,7 +17,7 @@ while True:
     		pygame.quit()
     		sys.exit()
     	font = pygame.font.Font(SCREENFONT, 50)
-        text = font.render("Hello World!...",0,(128,100,200))  
+        text = font.render("Hello World!...",0,(255,100,200))  
         screen.blit(text,(180,100))
                       
     pygame.display.update()
