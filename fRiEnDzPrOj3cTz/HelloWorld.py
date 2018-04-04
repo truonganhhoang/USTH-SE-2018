@@ -18,4 +18,4 @@ while True:
         text = font.render("Hello World!...",0,(255,100,200))  
         screen.blit(text,(180,100))
                       
-    pygame.display.update()
+    pygame.display.update() 
