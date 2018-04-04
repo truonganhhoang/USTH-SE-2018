@@ -3,9 +3,9 @@
 	+ Team name: Big4
 	+ Team member: 
 		* Do Duy Huy Hoang - USTHBI7-071
-		* Ha Minh Huong - 
+		* Ha Minh Huong - USTHBI7-079
 		* Nguyen Dinh Mau - USTHBI7 - 106
-		* Do Thu Anh - 
+		* Do Thu Anh - USTHBI7-006
 - Android Application 
 - Weather forecast 
 - First function: GUI 
