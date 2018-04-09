@@ -1,6 +1,10 @@
 # USTH SE 2018 
 - Group members: Le Huy Duc-036, Cao Phuong Linh-091, Bui Vu Huy-082, Huynh Vinh Nam-114
 - Project: make a game
-- Inspire from: Megaman x4 / or mummy maze
-+ First function: Game menu, animating sprites
+- Inspire from: Megaman x4/ mummy maze/ striker 1945
+https://en.wikipedia.org/wiki/Maze_of_the_Mummy
+https://en.wikipedia.org/wiki/Mega_Man_X4
+https://www.youtube.com/watch?v=l3VRxpvlTOQ
+
++ First function: Game menu, and make background images
 + Framework: just Java
