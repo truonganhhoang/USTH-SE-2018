@@ -1,0 +1,27 @@
+{
+  "name": "2048",
+  "version": "1.0.0",
+  "description": "2048 application for Software engineering course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spyral/USTH-SE-2018.git"
+  },
+  "keywords": [
+    "2048"
+  ],
+  "author": "OmegaLUL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spyral/USTH-SE-2018/issues"
+  },
+  "homepage": "https://github.com/Spyral/USTH-SE-2018#readme",
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "npm": "^5.8.0"
+  }
+}
