@@ -7,7 +7,7 @@ Members:
 ++++++PROJECT+++++++
 
 -programming  game war-plane with java 
--first function WarPlane :show plane on frame 
+-first function WarPlane :show plane on frame
 FrameWork: java
 
 USER STORY:  for first function
