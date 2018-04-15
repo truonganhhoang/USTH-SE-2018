@@ -3,9 +3,20 @@ linters:
     standard: PSR2
     fixer: true
   csslint: {  }
-  tslint: {  }
+  tslint: { 
+        config: build/tslint.json
+  }
+  checkstyle:
+      config: ./checkstyle.xml  
   flake8:
+  phpcs:
+    standard: 'PSR2'
+    exclude: 'Generic.Files.LineLength,PSR2.Files.EndFileNewline'
+    ignore: 'tests/fixtures/generated/*'
+    extensions: 'php,ctp'
+    tab_width: 4
     fixer: true
+  fixer: true
 files:
   ignore:
     - 'vendor/*'
