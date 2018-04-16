@@ -67,4 +67,4 @@ while playerAlive:
     bird.draw(screen) # draw the bird to the screen
     pygame.display.update() # update the screen
 
-    clock.tick(60)
+    clock.tick(FPS)
