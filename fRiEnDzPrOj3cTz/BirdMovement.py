@@ -27,14 +27,28 @@ class Bird(object):  # represents the bird, not the game
         elif key[pygame.K_LEFT]: # left key
             self.x -= speed # move left
 
+        if self.y < 0:
+            self.y = 0
+        if self.y > SCREENHEIGHT:
+            self.y = SCREENHEIGHT #TODO: edit this line into next scene
+        if self.x < 0:
+            self.x = 0
+        if self.x > SCREENWIDTH:
+            self.x = SCREENWIDTH #TODO: edit this line into the background floor
+
+
+
     def draw(self, surface):
         # draw on the surface
         # blit yourself at your current position
         surface.blit(self.image, (self.x, self.y))
 
 
+FPS = 60
+SCREENWIDTH = 640
+SCREENHEIGHT = 400
 pygame.init()
-screen = pygame.display.set_mode((640, 400))
+screen = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 
 bird = Bird() # create an instance
 clock = pygame.time.Clock()
