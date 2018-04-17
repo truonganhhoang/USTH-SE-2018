@@ -7,4 +7,4 @@
 ## Project descriptions:
 * Based on Madbarz - a fitness & workout app (https://play.google.com/store/apps/details?id=com.madbarz.madbarzApp)
 * First function: create a workout with different exercises
-* Using Ionic framework
+* Uses Java
