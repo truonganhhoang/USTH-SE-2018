@@ -44,6 +44,9 @@ II- Design:
 + GUI
 + App stuff
 + Bot
+
 III- Implementation: using Java
+
 IV- Verification: Not yet
+
 V- Maintenance:Not yet
