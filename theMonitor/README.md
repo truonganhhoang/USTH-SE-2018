@@ -12,6 +12,7 @@ Framework: Java.
 
 
 PROCESS: WATER FALL
+
 I-Requirement:
 1.	Functions: Create Tiles, Moving Tiles, Logical operations, Record score.
 2.	Interface: 2D game, easy to play, simple.
