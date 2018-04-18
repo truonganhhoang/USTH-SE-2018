@@ -18,6 +18,7 @@ I-Requirement:
 2.	Interface: 2D game, easy to play, simple.
 3.	Performance: High FPS, smooth.
 	Trying to create the game as same as the original game as possible.
+
 II- Design:
 1. Gameplay/Start:
 + Start class main method
