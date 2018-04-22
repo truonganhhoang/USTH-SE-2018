@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/addWorkoutButton" />
 
 
     <TextView
@@ -33,12 +33,12 @@
         android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/workoutRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/addWorkoutButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="@+id/addWorkoutButton" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addWorkoutButton"
         android:layout_width="65dp"
         android:layout_height="41dp"
         android:layout_marginBottom="26dp"
