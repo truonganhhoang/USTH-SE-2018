@@ -45,8 +45,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 ExerciseTable.NAME + "(" + ExerciseTable.Cols.ID + ")" +
                 ");"
         );
-        addWorkout(db,"HIIT");
-        addWorkout(db,"Full body hype");
     }
 
     @Override
@@ -63,14 +61,16 @@ public class DbHelper extends SQLiteOpenHelper {
         this.getWritableDatabase().insert(ExerciseTable.NAME, ExerciseTable.Cols.NAME, values);
     }
 
-    public void addWorkout(SQLiteDatabase db, String name) {
+    public void addWorkout(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(WorkoutTable.Cols.NAME,name);
         db.insert(WorkoutTable.NAME, WorkoutTable.Cols.NAME, values);
+        db.close();
     }
 
     public ArrayList<String> getAllWorkouts() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + WorkoutTable.NAME, null);
         ArrayList<String> workoutNames = new ArrayList<>();
 
@@ -81,6 +81,7 @@ public class DbHelper extends SQLiteOpenHelper {
         }
 
         cursor.close();
+        db.close();
         return workoutNames;
     }
 }
