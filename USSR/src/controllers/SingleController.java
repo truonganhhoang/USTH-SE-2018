@@ -7,7 +7,7 @@ import views.GameView;
 
 import java.awt.*;
 
-public class SingleController {
+public abstract class SingleController {
     GameObject gameObject;
     GameView gameView;
 

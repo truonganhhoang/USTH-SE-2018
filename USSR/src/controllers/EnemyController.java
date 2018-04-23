@@ -6,7 +6,7 @@ import views.AnimationView;
 
 import java.awt.*;
 
-public class EnemyController extends SingleControllerWithAnimation {
+public abstract class EnemyController extends SingleControllerWithAnimation {
     protected int moveDirections = 4;
     protected int maxMoveStep = 0;
     protected int moveStep = 0;
@@ -24,8 +24,5 @@ public class EnemyController extends SingleControllerWithAnimation {
         if (GameMap.getInstance().getPlayerTurn()) return;
     }
 
-    @Override
-    void findDirection() {
-
-    }
+    abstract Point findDirection(int startColumn,int startRow);
 }
