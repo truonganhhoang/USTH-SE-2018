@@ -5,7 +5,6 @@
  */
 package pkg2dgamesframework;
 
-import warplane.pkg2dgamesframework.GameThread;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -18,15 +17,15 @@ import javax.swing.JFrame;
  */
 public abstract class GameScreen extends JFrame implements KeyListener{
 
-    public static int KEY_PRESSED = 0;
-    public static int KEY_RELEASED = 1;
+    public static int keyPressed = 0;
+    public static int keyReleased = 1;
     
-    public int CUSTOM_WIDTH  = 500;
-    public int CUSTOM_HEIGHT = 500;
+    public int  customWidth  = 500;
+    public int  customHeight = 500;
     
-    private GameThread G_Thread;
+    private GameThread gThread;
     
-    public static int MASTER_WIDTH = 500, MASTER_HEIGHT = 500;
+    public static int masterWidth = 500, masterHeight = 500;
     
     public GameScreen(){
         InitThread();
@@ -42,10 +41,10 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     }
     
     public GameScreen(int w, int h){
-        this.CUSTOM_WIDTH = w;
-        this.CUSTOM_HEIGHT = h;
-        MASTER_WIDTH = CUSTOM_WIDTH;
-        MASTER_HEIGHT = CUSTOM_HEIGHT;
+        this. customWidth  = w;
+        this. customHeight= h;
+        masterWidth =  customWidth ;
+        masterHeight =   customHeight;
         InitThread();
         InitScreen();
     }
@@ -54,18 +53,18 @@ public abstract class GameScreen extends JFrame implements KeyListener{
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addKeyListener(this);
-        setSize(CUSTOM_WIDTH, CUSTOM_HEIGHT);
+        setSize(customWidth,   customHeight);
         setVisible(true);
         
     }
     
-    public void BeginGame(){
-        G_Thread.StartThread();
+    public void beginGame(){
+        gThread.StartThread();
     }
     
     private void InitThread(){
-        G_Thread = new GameThread(this);
-        add(G_Thread);
+        gThread = new GameThread(this);
+        add(gThread);
     }
     
     @Override
@@ -73,16 +72,16 @@ public abstract class GameScreen extends JFrame implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        KEY_ACTION(e, GameScreen.KEY_PRESSED);
+        keyAction(e, GameScreen.keyPressed);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        KEY_ACTION(e, GameScreen.KEY_RELEASED);
+        keyAction(e, GameScreen.keyReleased);
     }
     
-    public abstract void GAME_UPDATE(long deltaTime);
-    public abstract void GAME_PAINT(Graphics2D g2);
-    public abstract void KEY_ACTION(KeyEvent e, int Event);
+    public abstract void gameUpdate(long deltaTime);
+    public abstract void gamePaint(Graphics2D g2);
+    public abstract void keyAction(KeyEvent e, int Event);
     
 }

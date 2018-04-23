@@ -18,24 +18,24 @@ public class AFrameOnImage {
     
     private boolean enablePaintRect = false;
     
-    private int []DimsBounds = new int[4];
+    private int []dimsBounds = new int[4];
     
     public AFrameOnImage(int xOnImage, int yOnImage, int w, int h){
-        DimsBounds[0] = xOnImage;
-        DimsBounds[1] = yOnImage;
-        DimsBounds[2] = w;
-        DimsBounds[3] = h;
+        dimsBounds[0] = xOnImage;
+        dimsBounds[1] = yOnImage;
+        dimsBounds[2] = w;
+        dimsBounds[3] = h;
     }
-    public void VisibleRectDebug(boolean enable){
+    public void visibleRectDebug(boolean enable){
         enablePaintRect = enable;
     }
-    public int[] GetBounds(){
-        return DimsBounds;
+    public int[] getBounds(){
+        return dimsBounds;
     }
-    public void Paint(int x, int y, BufferedImage image, Graphics2D g2, int anchor, float rotation){
+    public void paint(int x, int y, BufferedImage image, Graphics2D g2, int anchor, float rotation){
         
 
-        BufferedImage imageDraw = image.getSubimage(DimsBounds[0], DimsBounds[1], DimsBounds[2], DimsBounds[3]);
+        BufferedImage imageDraw = image.getSubimage(dimsBounds[0], dimsBounds[1], dimsBounds[2], dimsBounds[3]);
         
         AffineTransform tx = new AffineTransform();
         tx.rotate(rotation, imageDraw.getWidth() / 2, imageDraw.getHeight() / 2);
@@ -47,9 +47,9 @@ public class AFrameOnImage {
         
         g2.drawImage(imageDraw, x, y, null);
         
-        if(enablePaintRect) PaintBound(g2);
+        if(enablePaintRect) paintBound(g2);
     }
-    private void PaintBound(Graphics2D g){
+    private void paintBound(Graphics2D g){
         
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package warplane.pkg2dgamesframework;
+package pkg2dgamesframework;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -34,8 +34,8 @@ public class GameThread extends JPanel implements Runnable{
     public GameThread(GameScreen context){
         this.context = context;
         
-        MasterWidth = context.CUSTOM_WIDTH;
-        MasterHeight = context.CUSTOM_HEIGHT;
+        MasterWidth = context.customWidth;
+        MasterHeight = context.customHeight;
         
         this.thread = new Thread(this);
         
@@ -45,7 +45,7 @@ public class GameThread extends JPanel implements Runnable{
     }
     public void paint(Graphics g){
         g.setColor(Color.white);
-        g.fillRect(0, 0, context.CUSTOM_WIDTH, context.CUSTOM_HEIGHT);
+        g.fillRect(0, 0, context.customWidth, context.customHeight);
         Graphics2D g2 = (Graphics2D)g;
         if(buffImage!=null){
             g2.scale(scaleX_, scaleY_);
@@ -56,11 +56,11 @@ public class GameThread extends JPanel implements Runnable{
     private void UpdateSize(){
         if(this.getWidth()<=0) return;
         
-        context.CUSTOM_WIDTH = this.getWidth();
-        context.CUSTOM_HEIGHT = this.getHeight();
+        context.customWidth = this.getWidth();
+        context.customHeight = this.getHeight();
         
-        scaleX_ = (float)context.CUSTOM_WIDTH/(float)MasterWidth;
-        scaleY_ = (float)context.CUSTOM_HEIGHT/(float)MasterHeight;
+        scaleX_ = (float)context.customWidth/(float)MasterWidth;
+        scaleY_ = (float)context.customHeight/(float)MasterHeight;
     }
 
     
@@ -78,7 +78,7 @@ public class GameThread extends JPanel implements Runnable{
             
             UpdateSize();
             
-            context.GAME_UPDATE(System.currentTimeMillis());
+            context.gameUpdate(System.currentTimeMillis());
             try{
                 
                 buffImage = new BufferedImage(MasterWidth, MasterHeight, BufferedImage.TYPE_INT_ARGB);
@@ -86,7 +86,7 @@ public class GameThread extends JPanel implements Runnable{
                 Graphics2D g2 = (Graphics2D) buffImage.getGraphics();
                 
                 if(g2!=null){
-                    context.GAME_PAINT(g2);
+                    context.gamePaint(g2);
                 }
                     
             }catch(Exception myException){
