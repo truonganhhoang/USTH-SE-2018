@@ -4,9 +4,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Tile {
-    public static final int WIDTH = 80;
-    public static final int HEIGHT = 80;
-    public static final int SLIDE_SPEED = 20;
+    public static final int WIDTH = 100;
+    public static final int HEIGHT = 100;
+    public static final int SLIDE_SPEED = 30;
     public static final int ARC_WIDTH = 15;
     public static final int ARC_HEIGHT = 15;
 
@@ -15,13 +15,17 @@ public class Tile {
     private Color background;
     private Color text;
     private Font font;
+    private Point slideTo;
     private int x;
     private int y;
+
+    private boolean canCombine = true;
 
     public Tile(int value,int x,int y){
         this.value = value;
         this.x = x;
         this.y = y;
+        slideTo = new Point(x,y);
         tileImage = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_ARGB);
         drawImage();
     }
@@ -32,43 +36,43 @@ public class Tile {
             background = new Color(0xe9e9e9);
             text = new Color(0x000000);
         }
-        if(value == 4){
+        else if(value == 4){
             background = new Color(0xe6daab);
             text = new Color(0x000000);
         }
-        if(value == 8){
+        else if(value == 8){
             background = new Color(0xf79d3d);
             text = new Color(0xffffff);
         }
-        if(value == 16){
+        else if(value == 16){
             background = new Color(0xf28007);
             text = new Color(0xffffff);
         }
-        if(value == 32){
+        else if(value == 32){
             background = new Color(0xf55e3b);
             text = new Color(0xffffff);
         }
-        if(value == 64){
+        else if(value == 64){
             background = new Color(0xff0000);
             text = new Color(0xffffff);
         }
-        if(value == 128){
+        else if(value == 128){
             background = new Color(0xe9de84);
             text = new Color(0xffffff);
         }
-        if(value == 512){
+        else if(value == 256){
             background = new Color(0xf6e873);
             text = new Color(0xffffff);
         }
-        if(value == 1024){
+        else if(value == 512){
             background = new Color(0xf5e455);
             text = new Color(0xffffff);
         }
-        if(value == 2048){
+        else if(value == 1024){
             background = new Color(0xf7e12c);
             text = new Color(0xffffff);
         }
-        if(value == 4096){
+        else if(value == 2048){
             background = new Color(0xffe400);
             text = new Color(0xffffff);
         }
@@ -109,5 +113,43 @@ public class Tile {
 
     public int getValue(){
         return value;
+    }
+
+    public void setValue(int value){
+        this.value = value;
+        drawImage();
+    }
+
+    public boolean canCombine() {
+        return canCombine;
+    }
+
+    public void setCanCombine(boolean canCombine) {
+        this.canCombine = canCombine;
+    }
+
+    public Point getSlideTo() {
+        return slideTo;
+    }
+
+    public void setSlideTo(Point slideTo) {
+        this.slideTo = slideTo;
+    }
+
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
     }
 }

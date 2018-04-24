@@ -27,7 +27,7 @@ public class Keyboard {
     }
 
     public static boolean typed(int keyEvent){
-        return !pressed[keyEvent]&&prev[keyEvent];
+        return !pressed[keyEvent] && prev[keyEvent];
     }
 
 }
