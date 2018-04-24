@@ -1,7 +1,9 @@
 package com.company;
-import javax.swing.JFrame;
 
-public class Main {
+import javax.swing.*;
+import java.applet.Applet;
+
+public class Main extends Applet {
 
     public static void main(String[] args) {
         GamePlay game = new GamePlay();

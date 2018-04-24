@@ -11,7 +11,8 @@ import java.awt.image.BufferedImage;
 
 public class GamePlay extends JPanel implements KeyListener,Runnable {
 
-    public static final int WIDTH = 400;    // WIDTH of the Board Game
+    private static final long serialVersionUID = 1L;
+    public static final int WIDTH = 500;    // WIDTH of the Board Game
     public static final int HEIGHT = 530;   // HEIGHT of the Board Game
     public static final Font main = new Font("Bebas Neue Regular", Font.PLAIN, 28); // FONT of the number in tile
     private Thread game;    //  Create Game thread
@@ -19,9 +20,12 @@ public class GamePlay extends JPanel implements KeyListener,Runnable {
     private BufferedImage Image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB); //Buffer the Board Game
     private GameBoard board; // Create Board Game
 
+    private long startTime;
+    private long elapsed;
+    private boolean set;
 
     public GamePlay() {
-
+        setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT)); // Create the components'size of the Board game
         addKeyListener(this);
 
@@ -40,16 +44,17 @@ public class GamePlay extends JPanel implements KeyListener,Runnable {
         g.fillRect(0, 0, WIDTH, HEIGHT);
         //render board
         board.render(g);
+        g.dispose();
 
 
         Graphics2D g2d = (Graphics2D) getGraphics();
         g2d.drawImage(Image, 0, 0, null);
-
+        g2d.dispose();
     }
 
     @Override
     public void run(){ // Run thread
-        boolean shouldRender = false;
+
         int fps = 0, updates = 0;
         long fpsTimer = System.currentTimeMillis();
         double nsPerUpdate = 1000000000.0 / 60;
@@ -60,6 +65,7 @@ public class GamePlay extends JPanel implements KeyListener,Runnable {
 
         while(running) {
 
+            boolean shouldRender = false;
             double now = System.nanoTime();
             unprocessed += (now - then)/nsPerUpdate;
             then = now;
@@ -84,7 +90,7 @@ public class GamePlay extends JPanel implements KeyListener,Runnable {
             }
         }
         //FPS Timer
-        if(System.currentTimeMillis() - fpsTimer > 10000){
+        if(System.currentTimeMillis() - fpsTimer > 1000){
             System.out.printf("%d fps %d updates", fps, updates);
             System.out.println();
             fps = 0;
