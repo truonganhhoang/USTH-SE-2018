@@ -11,10 +11,5 @@
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Setup" />
 
-    <item
-        android:id="@+id/navigation_finish"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Finish" />
-
 
 </menu>

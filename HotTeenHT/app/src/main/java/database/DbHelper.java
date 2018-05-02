@@ -55,33 +55,63 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addExercise(String name) {
+    public void insertExercise(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ExerciseTable.Cols.NAME,name);
-        this.getWritableDatabase().insert(ExerciseTable.NAME, ExerciseTable.Cols.NAME, values);
+        db.insert(ExerciseTable.NAME, ExerciseTable.Cols.NAME, values);
+        db.close();
     }
 
-    public void addWorkout(String name) {
+    public long insertWorkout(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(WorkoutTable.Cols.NAME,name);
-        db.insert(WorkoutTable.NAME, WorkoutTable.Cols.NAME, values);
+        long id = db.insert(WorkoutTable.NAME, WorkoutTable.Cols.NAME, values);
+        db.close();
+        return id;
+    }
+
+    public void insertRelationship(int workoutId, int exerciseId, int reps) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(RelationshipTable.Cols.WORKOUTID, workoutId);
+        values.put(RelationshipTable.Cols.EXERCISEID, exerciseId);
+        values.put(RelationshipTable.Cols.REPS, reps);
+        db.insert(RelationshipTable.NAME, null,values);
         db.close();
     }
 
-    public ArrayList<String> getAllWorkouts() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + WorkoutTable.NAME, null);
-        ArrayList<String> workoutNames = new ArrayList<>();
 
-        if (cursor.moveToFirst()) {
-            do {
-                workoutNames.add(cursor.getString(cursor.getColumnIndex(WorkoutTable.Cols.NAME)));
-            } while (cursor.moveToNext());
-        }
+    public Cursor getAllExercisesCursor() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(ExerciseTable.NAME,
+                new String[]{ExerciseTable.Cols.ID, ExerciseTable.Cols.NAME},
+                null,null,null,null,null);
+        return cursor;
+    }
 
+    public Cursor getExercisesFromWorkoutCursor(int workoutId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(RelationshipTable.NAME,
+                new String[]{RelationshipTable.Cols.EXERCISEID, RelationshipTable.Cols.REPS},
+                RelationshipTable.Cols.WORKOUTID + " = ?",
+                new String[] {Integer.toString(workoutId)},
+                null,null,null);
+        return cursor;
+    }
+
+    public String getExerciseName(int exerciseId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(ExerciseTable.NAME,
+                new String[] {ExerciseTable.Cols.NAME},
+                ExerciseTable.Cols.ID + " = ?",
+                new String[] {Integer.toString(exerciseId)},
+                null,null,null);
+        cursor.moveToFirst();
+        String name = cursor.getString(cursor.getColumnIndex(ExerciseTable.Cols.NAME));
         cursor.close();
         db.close();
-        return workoutNames;
+        return name;
     }
 }

@@ -1,27 +1,33 @@
 package com.example.minhduc.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class CreateNewWorkout extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
-    private TextView mTextMessage;
     private MenuItem prevMenuItem;
+    private Button buttonFinish;
+    private ViewPager pager;
+    private SectionsPagerAdapter pagerAdapter;
+    private ExerciseFragment exerciseFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            ViewPager pager = findViewById(R.id.viewPagerCreateWorkout);
             switch (item.getItemId()) {
                 case R.id.navigation_exercise:
                     pager.setCurrentItem(0);
@@ -29,11 +35,16 @@ public class CreateNewWorkout extends AppCompatActivity {
                 case R.id.navigation_setup:
                     pager.setCurrentItem(1);
                     return true;
-                case R.id.navigation_finish:
-                    pager.setCurrentItem(2);
-                    return true;
             }
             return false;
+        }
+    };
+
+    private View.OnClickListener finishButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            exerciseFragment.insertData();
+            finish();
         }
     };
 
@@ -42,14 +53,15 @@ public class CreateNewWorkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_new_workout);
 
-        mTextMessage = findViewById(R.id.message);
+        buttonFinish = findViewById(R.id.buttonFinish);
+        buttonFinish.setOnClickListener(finishButtonListener);
+
         bottomNavigationView = findViewById(R.id.navigationCreateWorkout);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //Attach the SectionsPagerAdapter to the ViewPager
-        SectionsPagerAdapter pagerAdapter =
-                new SectionsPagerAdapter(getSupportFragmentManager());
-        ViewPager pager = findViewById(R.id.viewPagerCreateWorkout);
+        pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        pager = findViewById(R.id.viewPagerCreateWorkout);
         pager.setAdapter(pagerAdapter);
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -85,19 +97,27 @@ public class CreateNewWorkout extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
         @Override
         public Fragment getItem(int position) {
             //The fragment to be displayed on each page
             switch (position) {
                 case 0:
-                    return new ExerciseFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("WorkoutName", getIntent().getStringExtra("WorkoutName"));
+                    exerciseFragment = new ExerciseFragment();
+                    exerciseFragment.setArguments(bundle);
+                    return exerciseFragment;
                 case 1:
-                case 2:
+                    return new SetupFragment();
             }
             return null;
         }
     }
 
+    public void onBackPressed() {
+        NavUtils.navigateUpFromSameTask(this);
+        super.onBackPressed();
+    }
 }

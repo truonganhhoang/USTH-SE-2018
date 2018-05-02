@@ -21,17 +21,15 @@ public class NameYourWorkout extends AppCompatActivity {
 
         workoutNameField = findViewById(R.id.workoutNameEditText);
 
-        final DbHelper dbHelper = new DbHelper(this);
-
         okButton = findViewById(R.id.confirmWorkoutNameButton);
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbHelper.addWorkout(workoutNameField.getText().toString());
                 Intent i = new Intent(getApplicationContext(), CreateNewWorkout.class);
+                i.putExtra("WorkoutName", workoutNameField.getText().toString());
                 startActivity(i);
+                finish();
             }
         });
-
     }
 }

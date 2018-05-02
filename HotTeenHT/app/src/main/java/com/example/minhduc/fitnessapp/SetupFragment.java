@@ -1,38 +1,27 @@
 package com.example.minhduc.fitnessapp;
 
-import android.content.Intent;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import java.util.ArrayList;
-
-import database.DbHelper;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ExerciseFragment.OnFragmentInteractionListener} interface
+ * {@link SetupFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ExerciseFragment#newInstance} factory method to
+ * Use the {@link SetupFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ExerciseFragment extends Fragment {
+public class SetupFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private RecyclerView exerciseList;
-    ArrayList<String> exerciseNames;
-    ArrayList<Integer> exerciseIds;
-    ArrayList<Integer> exerciseReps;
-    ExerciseWithRepsAdapter exerciseWithRepsAdapter;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -40,7 +29,7 @@ public class ExerciseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ExerciseFragment() {
+    public SetupFragment() {
         // Required empty public constructor
     }
 
@@ -50,11 +39,11 @@ public class ExerciseFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ExerciseFragment.
+     * @return A new instance of fragment SetupFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ExerciseFragment newInstance(String param1, String param2) {
-        ExerciseFragment fragment = new ExerciseFragment();
+    public static SetupFragment newInstance(String param1, String param2) {
+        SetupFragment fragment = new SetupFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,49 +64,7 @@ public class ExerciseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
-        exerciseNames = new ArrayList<>();
-        exerciseIds = new ArrayList<>();
-        exerciseReps = new ArrayList<>();
-
-        exerciseWithRepsAdapter = new ExerciseWithRepsAdapter(0, exerciseNames, exerciseReps);
-
-        exerciseList = rootView.findViewById(R.id.recyclerViewExerciseWithReps);
-        exerciseList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        exerciseList.setAdapter(exerciseWithRepsAdapter);
-
-        Button buttonAddExercise = rootView.findViewById(R.id.buttonAddExercise);
-        buttonAddExercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ChooseExercise.class);
-                startActivityForResult(i, 1);
-            }
-        });
-        return rootView;
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (data != null) {
-            int id = data.getIntExtra("ID", -1);
-            String name = data.getStringExtra("ExerciseName");
-            exerciseIds.add(id);
-            exerciseNames.add(name);
-            exerciseReps.add(0);
-            exerciseWithRepsAdapter.notifyDataSetChanged();
-        }
-    }
-
-    public void insertData() {
-        DbHelper dbHelper = new DbHelper(getContext());
-        String workoutName = getArguments().getString("WorkoutName");
-
-        int workoutId = (int) dbHelper.insertWorkout(workoutName);
-        for (int i = 0; i < exerciseIds.size(); i++) {
-            dbHelper.insertRelationship(workoutId, exerciseIds.get(i), exerciseReps.get(i));
-        }
+        return inflater.inflate(R.layout.fragment_setup, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -126,8 +73,6 @@ public class ExerciseFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
-
 
     @Override
     public void onDetach() {
