@@ -2,32 +2,32 @@
 <Project>
     <totalNumberOfTestableClasses>1</totalNumberOfTestableClasses>
     <cut>
-        <fullNameOfTargetClass>com.company.GamePlay</fullNameOfTargetClass>
-        <fullNameOfTestSuite>com.company.GamePlay_ESTest</fullNameOfTestSuite>
+        <fullNameOfTargetClass>com.company.Tile</fullNameOfTargetClass>
+        <fullNameOfTestSuite>com.company.Tile_ESTest</fullNameOfTestSuite>
         <generation>
             <id>0</id>
             <failed>false</failed>
             <modified>true</modified>
             <timeBudgetInSeconds>180</timeBudgetInSeconds>
             <memoryInMB>2000</memoryInMB>
-            <std_err_CLIENT>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_06_54\logs\com.company.GamePlay\std_err_CLIENT.log</std_err_CLIENT>
-            <std_out_CLIENT>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_06_54\logs\com.company.GamePlay\std_out_CLIENT.log</std_out_CLIENT>
-            <std_err_MASTER>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_06_54\logs\com.company.GamePlay\std_err_MASTER.log</std_err_MASTER>
-            <std_out_MASTER>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_06_54\logs\com.company.GamePlay\std_out_MASTER.log</std_out_MASTER>
+            <std_err_CLIENT>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\logs\com.company.Tile\std_err_CLIENT.log</std_err_CLIENT>
+            <std_out_CLIENT>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\logs\com.company.Tile\std_out_CLIENT.log</std_out_CLIENT>
+            <std_err_MASTER>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\logs\com.company.Tile\std_err_MASTER.log</std_err_MASTER>
+            <std_out_MASTER>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\logs\com.company.Tile\std_out_MASTER.log</std_out_MASTER>
             <suite>
-                <fullPathOfTestSuite>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_06_54\tests\com\company\GamePlay_ESTest.java</fullPathOfTestSuite>
-                <numberOfTests>1</numberOfTests>
-                <totalNumberOfStatements>1</totalNumberOfStatements>
-                <totalEffortInSeconds>160</totalEffortInSeconds>
+                <fullPathOfTestSuite>C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\tests\com\company\Tile_ESTest.java</fullPathOfTestSuite>
+                <numberOfTests>27</numberOfTests>
+                <totalNumberOfStatements>55</totalNumberOfStatements>
+                <totalEffortInSeconds>156</totalEffortInSeconds>
                 <coverage>
                     <criterion>LineCoverage</criterion>
-                    <coverageValue>0.09</coverageValue>
-                    <coverageBitString>1111110000000000000000000000000000000000000000000000000000000000</coverageBitString>
+                    <coverageValue>0.99</coverageValue>
+                    <coverageBitString>111111111111111111111111111111111111111111111111111111111111111110111111111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>BranchCoverage</criterion>
-                    <coverageValue>0.06</coverageValue>
-                    <coverageBitString>001000000000000000</coverageBitString>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111111111111111111111111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>ExceptionCoverage</criterion>
@@ -36,28 +36,28 @@
                 </coverage>
                 <coverage>
                     <criterion>WeakMutationScore</criterion>
-                    <coverageValue>0.0</coverageValue>
-                    <coverageBitString>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</coverageBitString>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>OutputCoverage</criterion>
                     <coverageValue>1.0</coverageValue>
-                    <coverageBitString></coverageBitString>
+                    <coverageBitString>1111111111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>MethodCoverage</criterion>
-                    <coverageValue>0.14</coverageValue>
-                    <coverageBitString>1000000</coverageBitString>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>MethodNoExceptionCoverage</criterion>
-                    <coverageValue>0.0</coverageValue>
-                    <coverageBitString>0000000</coverageBitString>
+                    <coverageValue>0.92</coverageValue>
+                    <coverageBitString>1111110111111</coverageBitString>
                 </coverage>
                 <coverage>
                     <criterion>CBranchCoverage</criterion>
-                    <coverageValue>0.06</coverageValue>
-                    <coverageBitString>001000000000000000</coverageBitString>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111111111111111111111111111</coverageBitString>
                 </coverage>
             </suite>
         </generation>
