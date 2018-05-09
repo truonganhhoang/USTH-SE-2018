@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
 
 
 /**
@@ -22,6 +23,12 @@ public class SetupFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private int rounds;
+    private int restExercises;
+    private int restRounds;
+    private NumberPicker npRounds;
+    private NumberPicker npRestExercises;
+    private NumberPicker npRestRounds;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -51,6 +58,18 @@ public class SetupFragment extends Fragment {
         return fragment;
     }
 
+    public int getRounds() {
+        return rounds;
+    }
+
+    public int getRestExercises() {
+        return restExercises;
+    }
+
+    public int getRestRounds() {
+        return restRounds;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +83,64 @@ public class SetupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setup, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_setup, container, false);
+
+        npRounds = rootView.findViewById(R.id.numberPickerRounds);
+        npRestExercises = rootView.findViewById(R.id.numberPickerRestExercises);
+        npRestRounds = rootView.findViewById(R.id.numberPickerRestRounds);
+
+        rounds = 4;
+        npRounds.setWrapSelectorWheel(true);
+        npRounds.setMinValue(1);
+        npRounds.setMaxValue(20);
+        npRounds.setValue(4);
+        npRounds.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        npRounds.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                rounds = newVal;
+                System.out.println(rounds);
+            }
+        });
+
+        NumberPicker.Formatter formatter = new NumberPicker.Formatter() {
+            @Override
+            public String format(int value) {
+                int temp = value * 5;
+                return "" + temp;
+            }
+        };
+        restExercises = 30;
+        npRestExercises.setWrapSelectorWheel(true);
+        npRestExercises.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        npRestExercises.setFormatter(formatter);
+        npRestExercises.setMinValue(1);
+        npRestExercises.setMaxValue(40);
+        npRestExercises.setValue(6);
+        npRestExercises.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                restExercises = newVal * 5;
+                System.out.println(restExercises);
+            }
+        });
+
+        restRounds = 90;
+        npRestRounds.setWrapSelectorWheel(true);
+        npRestRounds.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        npRestRounds.setFormatter(formatter);
+        npRestRounds.setMinValue(1);
+        npRestRounds.setMaxValue(40);
+        npRestRounds.setValue(18);
+        npRestRounds.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                restRounds = newVal * 5;
+                System.out.println(restRounds);
+            }
+        });
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

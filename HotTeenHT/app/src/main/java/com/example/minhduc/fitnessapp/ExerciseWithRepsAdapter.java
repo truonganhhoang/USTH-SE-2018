@@ -11,12 +11,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ExerciseWithRepsAdapter extends RecyclerView.Adapter<ExerciseWithRepsAdapter.ViewHolder> {
-    private int purpose;
     private ArrayList<String> names;
     private ArrayList<Integer> exerciseReps;
 
-    public ExerciseWithRepsAdapter(int purpose, ArrayList<String> names, ArrayList<Integer> exerciseReps) {
-        this.purpose = purpose;
+    public ExerciseWithRepsAdapter(ArrayList<String> names, ArrayList<Integer> exerciseReps) {
         this.names = names;
         this.exerciseReps = exerciseReps;
     }
@@ -48,26 +46,17 @@ public class ExerciseWithRepsAdapter extends RecyclerView.Adapter<ExerciseWithRe
         CardView cardView = holder.cardView;
         TextView textView = cardView.findViewById(R.id.exerciseName);
         NumberPicker np = cardView.findViewById(R.id.numberPickerExerciseReps);
+        np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         np.setMinValue(0);
         np.setMaxValue(99);
         np.setWrapSelectorWheel(true);
         final int pos = position;
         textView.setText(names.get(position));
-
-        switch (purpose) {
-            case 0:
-                //np.setValue(10);
-                np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-                    @Override
-                    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                        exerciseReps.set(pos, newVal);
-                    }
-                });
-
-                break;
-            case 1:
-                np.setValue(exerciseReps.get(position));
-                break;
-        }
+        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                exerciseReps.set(pos, newVal);
+            }
+        });
     }
 }

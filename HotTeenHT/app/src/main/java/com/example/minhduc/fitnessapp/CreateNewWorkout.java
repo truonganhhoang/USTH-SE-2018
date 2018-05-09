@@ -15,6 +15,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import database.DbHelper;
+
 public class CreateNewWorkout extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private MenuItem prevMenuItem;
@@ -22,6 +26,7 @@ public class CreateNewWorkout extends AppCompatActivity {
     private ViewPager pager;
     private SectionsPagerAdapter pagerAdapter;
     private ExerciseFragment exerciseFragment;
+    private SetupFragment setupFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,7 +48,7 @@ public class CreateNewWorkout extends AppCompatActivity {
     private View.OnClickListener finishButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            exerciseFragment.insertData();
+            insertData();
             finish();
         }
     };
@@ -89,6 +94,9 @@ public class CreateNewWorkout extends AppCompatActivity {
 
             }
         });
+
+        exerciseFragment = new ExerciseFragment();
+        setupFragment = new SetupFragment();
     }
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -104,15 +112,27 @@ public class CreateNewWorkout extends AppCompatActivity {
             //The fragment to be displayed on each page
             switch (position) {
                 case 0:
-                    Bundle bundle = new Bundle();
-                    bundle.putString("WorkoutName", getIntent().getStringExtra("WorkoutName"));
-                    exerciseFragment = new ExerciseFragment();
-                    exerciseFragment.setArguments(bundle);
                     return exerciseFragment;
                 case 1:
-                    return new SetupFragment();
+                    return setupFragment;
             }
             return null;
+        }
+    }
+
+    public void insertData() {
+        ArrayList<Integer> exerciseIds = exerciseFragment.getExerciseIds();
+        ArrayList<Integer> exerciseReps = exerciseFragment.getExerciseReps();
+
+        DbHelper dbHelper = new DbHelper(this);
+        String workoutName = getIntent().getStringExtra("WorkoutName");
+        int rounds = setupFragment.getRounds();
+        int restExercises = setupFragment.getRestExercises();
+        int restRounds = setupFragment.getRestRounds();
+
+        int workoutId = (int) dbHelper.insertWorkout(workoutName, rounds, restExercises, restRounds);
+        for (int i = 0; i < exerciseIds.size(); i++) {
+            dbHelper.insertRelationship(workoutId, exerciseIds.get(i), exerciseReps.get(i));
         }
     }
 

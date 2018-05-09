@@ -6,6 +6,9 @@ public class DbSchema {
         public static final class Cols {
             public static final String ID = "_id";
             public static final String NAME = "Name";
+            public static final String ROUNDS = "Rounds";
+            public static final String RESTEXERCISES = "RestExercises";
+            public static final String RESTROUNDS = "RestRounds";
         }
     }
 

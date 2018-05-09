@@ -24,14 +24,22 @@ import database.DbHelper;
  * create an instance of this fragment.
  */
 public class ExerciseFragment extends Fragment {
+    public ArrayList<Integer> getExerciseIds() {
+        return exerciseIds;
+    }
+
+    public ArrayList<Integer> getExerciseReps() {
+        return exerciseReps;
+    }
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private RecyclerView exerciseList;
-    ArrayList<String> exerciseNames;
-    ArrayList<Integer> exerciseIds;
-    ArrayList<Integer> exerciseReps;
+    private ArrayList<String> exerciseNames;
+    private ArrayList<Integer> exerciseIds;
+    private ArrayList<Integer> exerciseReps;
     ExerciseWithRepsAdapter exerciseWithRepsAdapter;
 
     // TODO: Rename and change types of parameters
@@ -80,7 +88,7 @@ public class ExerciseFragment extends Fragment {
         exerciseIds = new ArrayList<>();
         exerciseReps = new ArrayList<>();
 
-        exerciseWithRepsAdapter = new ExerciseWithRepsAdapter(0, exerciseNames, exerciseReps);
+        exerciseWithRepsAdapter = new ExerciseWithRepsAdapter(exerciseNames, exerciseReps);
 
         exerciseList = rootView.findViewById(R.id.recyclerViewExerciseWithReps);
         exerciseList.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -110,24 +118,12 @@ public class ExerciseFragment extends Fragment {
         }
     }
 
-    public void insertData() {
-        DbHelper dbHelper = new DbHelper(getContext());
-        String workoutName = getArguments().getString("WorkoutName");
-
-        int workoutId = (int) dbHelper.insertWorkout(workoutName);
-        for (int i = 0; i < exerciseIds.size(); i++) {
-            dbHelper.insertRelationship(workoutId, exerciseIds.get(i), exerciseReps.get(i));
-        }
-    }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
-
-
 
     @Override
     public void onDetach() {
