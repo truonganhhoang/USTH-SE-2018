@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
+                {
+                    "source": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "7,4,2,3,5,6",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "288,157,57,105,204,250",
+                        "endColumns": "36,45,46,50,44,36",
+                        "endOffsets": "320,198,99,151,244,282"
+                    },
+                    "to": {
+                        "startLines": "111,124,125,126,160,181",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "5689,6616,6662,6709,8900,10351",
+                        "endColumns": "36,45,46,50,44,36",
+                        "endOffsets": "5721,6657,6704,6755,8940,10383"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\cb66ee03c8fce511b02e12277c11377b\\res\\values\\values.xml",
                     "from": {
@@ -20,25 +37,6 @@
                         "endLines": "127,128,129,130,131,132,133,134,135,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,734,735,743,746,747,750,751,752,785,786,787,789,790,791,792,793,808,1152,1889,1899,2166,2167,2170,2173,2176,2180,2185,2224,2229,2233,2238,2242,2246,2351,2355,2362,2366,2369,2378,2384,2387,2396,2400,2409",
                         "endColumns": "73,80,63,65,69,69,69,69,66,53,78,72,64,62,70,70,61,68,65,66,66,55,50,52,51,53,62,58,61,58,59,62,74,71,70,55,70,56,56,65,63,70,56,52,62,51,57,46,44,47,65,61,62,56,56,144,120,86,90,300,165,154,101,12,12,96,12,12,91,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "6829,6910,6974,7040,7110,7180,7250,7320,7387,56338,56417,56490,56555,56618,56689,56760,56822,56891,56957,57024,57091,57147,57198,57251,57303,57357,57420,57479,57541,57600,57660,57723,57798,57870,57941,57997,58068,58125,58182,58248,58312,58383,58440,58493,58556,58608,58666,62328,62373,62754,62946,63008,63188,63245,63302,65746,65867,65954,66115,66416,66582,66737,66839,67929,90913,136977,137568,157926,158018,158197,158365,158540,158793,159084,161888,162246,162478,162848,163008,163162,171643,171884,172319,172526,172710,173275,173636,173765,174432,174612,175321"
-                    }
-                },
-                {
-                    "source": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,15,10,17",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "57,540,384,634",
-                        "endLines": "8,15,13,17",
-                        "endColumns": "12,90,12,80",
-                        "endOffsets": "376,626,532,710"
-                    },
-                    "to": {
-                        "startLines": "809,815,816,820",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "67934,68253,68343,68493",
-                        "endLines": "814,815,819,820",
-                        "endColumns": "12,89,12,79",
-                        "endOffsets": "68248,68338,68488,68568"
                     }
                 },
                 {
@@ -77,6 +75,23 @@
                         "endLines": "157,158,632,633,634,635,636,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,713,714,722,723,731,732,733,736,753,795,2148,2152,2154,2160,2162,2348,2349",
                         "endColumns": "68,62,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66",
                         "endOffsets": "8743,8806,56013,56081,56153,56223,56284,59897,59958,60020,60084,60146,60207,60275,60375,60435,60501,60574,60643,60700,60752,60814,61339,61415,61795,61830,62212,62246,62281,62408,63372,66963,156702,156903,157079,157463,157658,171476,171543"
+                    }
+                },
+                {
+                    "source": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "90,149",
+                        "endColumns": "57,55",
+                        "endOffsets": "143,200"
+                    },
+                    "to": {
+                        "startLines": "627,628",
+                        "startColumns": "4,4",
+                        "startOffsets": "55664,55722",
+                        "endColumns": "57,55",
+                        "endOffsets": "55717,55773"
                     }
                 },
                 {
@@ -152,24 +167,26 @@
                     }
                 },
                 {
-                    "source": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "7,4,2,3,5,6",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "288,157,57,105,204,250",
-                        "endColumns": "36,45,46,50,44,36",
-                        "endOffsets": "320,198,99,151,244,282"
+                        "startLines": "3,15,10,17",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "57,540,384,634",
+                        "endLines": "8,15,13,17",
+                        "endColumns": "12,90,12,80",
+                        "endOffsets": "376,626,532,710"
                     },
                     "to": {
-                        "startLines": "111,124,125,126,160,181",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "5689,6616,6662,6709,8900,10351",
-                        "endColumns": "36,45,46,50,44,36",
-                        "endOffsets": "5721,6657,6704,6755,8940,10383"
+                        "startLines": "809,815,816,820",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "67934,68253,68343,68493",
+                        "endLines": "814,815,819,820",
+                        "endColumns": "12,89,12,79",
+                        "endOffsets": "68248,68338,68488,68568"
                     }
                 },
                 {
-                    "source": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "3,1,9,2,5,4,6",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -183,23 +200,6 @@
                         "startOffsets": "65496,65549,65959,66968,67045,67099,67143",
                         "endColumns": "52,56,69,76,53,43,61",
                         "endOffsets": "65544,65601,66024,67040,67094,67138,67200"
-                    }
-                },
-                {
-                    "source": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "90,149",
-                        "endColumns": "57,55",
-                        "endOffsets": "143,200"
-                    },
-                    "to": {
-                        "startLines": "627,628",
-                        "startColumns": "4,4",
-                        "startOffsets": "55664,55722",
-                        "endColumns": "57,55",
-                        "endOffsets": "55717,55773"
                     }
                 },
                 {

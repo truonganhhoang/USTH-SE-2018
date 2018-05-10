@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\cb66ee03c8fce511b02e12277c11377b\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",

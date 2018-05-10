@@ -23,6 +23,9 @@ public class WorkoutDetail extends AppCompatActivity {
     private TextView textViewSetupDetail;
     private TextView textViewWorkoutName;
     private int workoutId;
+    private int rounds;
+    private int restExercises;
+    private int restRounds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +57,14 @@ public class WorkoutDetail extends AppCompatActivity {
         textViewWorkoutName = findViewById(R.id.textViewWorkoutName);
         textViewWorkoutName.setText(dbHelper.getWorkoutName(workoutId));
 
+        rounds = dbHelper.getRounds(workoutId);
+        restExercises = dbHelper.getRestExercises(workoutId);
+        restRounds = dbHelper.getRestRounds(workoutId);
+        String setupDetail = "Rounds: " + rounds +
+                            "\nRest between exercises: " + restExercises + " secs" +
+                            "\nRest between rounds: " + restRounds + " secs";
         textViewSetupDetail = findViewById(R.id.textViewSetupDetail);
-        textViewSetupDetail.setText("Rounds: " + dbHelper.getRounds(workoutId) +
-                                    "\nRest between exercises: " + dbHelper.getRestExercises(workoutId) + " secs" +
-                                    "\nRest between rounds: " + dbHelper.getRestRounds(workoutId) + " secs");
+        textViewSetupDetail.setText(setupDetail);
     }
 
     public Cursor getExercisesFromWorkoutCursor(int workoutId) {

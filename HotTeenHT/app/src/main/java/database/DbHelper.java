@@ -18,6 +18,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final int VERSION = 1;
     public static final String DATABASE_NAME = "fitnessDb.db";
 
+    public static final String EXERCISES[] = {"Push up", "Chin up", "Pull up", "Squats", "Crunches", "Jumping Jacks", "Dips"};
+
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
@@ -50,6 +52,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 ExerciseTable.NAME + "(" + ExerciseTable.Cols.ID + ")" +
                 ");"
         );
+
+        for (int i = 0; i < EXERCISES.length; i++) {
+            ContentValues values = new ContentValues();
+            values.put(ExerciseTable.Cols.NAME, EXERCISES[i]);
+            db.insert(ExerciseTable.NAME, ExerciseTable.Cols.NAME, values);
+        }
     }
 
     @Override

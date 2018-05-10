@@ -1,4 +1,4 @@
-#Wed May 09 15:04:40 ICT 2018
-base.0=D\:\\Codes\\AndroidStudioProjects\\FitnessApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Thu May 10 20:41:40 ICT 2018
+base.0=D\:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
