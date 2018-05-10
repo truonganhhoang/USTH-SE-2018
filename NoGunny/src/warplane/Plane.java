@@ -12,11 +12,12 @@ import pkg2dgamesframework.Objects;
  *
  * @author duanp
  */
-public class Plane extends Objects{
+public class Plane extends Objects {
+
     private float vt = 0;
-    
+
     private Rectangle rect;
-    private boolean isLive= true;
+    private boolean isLive = true;
 
     public static int up;
     public static int down;
@@ -27,30 +28,32 @@ public class Plane extends Objects{
 
     public Plane(int x, int y, int w, int h) {
         super(x, y, w, h);
-        rect = new Rectangle(x,y,w,h);
-        
+        rect = new Rectangle(x, y, w, h);
+
     }
-    public Rectangle getRectangle(){
-         return rect;
-     }
-    
-    public void setLive(boolean b){
-        isLive= b;
+
+    public Rectangle getRectangle() {
+        return rect;
     }
-    public boolean getLive(){
+
+    public void setLive(boolean b) {
+        isLive = b;
+    }
+
+    public boolean getLive() {
         return isLive;
     }
 
     public void setVt(float vt) {////va cham
         this.vt = vt;
     }
- 
+
     public void update(long deltaTime) {
         vt += WarPlane.g;
-        
+
         this.setPosY(this.getPosY() + vt);
-        this.rect.setLocation((int) this.getPosX(), (int)this.getPosY());
-        
+        this.rect.setLocation((int) this.getPosX(), (int) this.getPosY());
+
         if (vt < 0) {
             isFlying = true;///updown
         } else {

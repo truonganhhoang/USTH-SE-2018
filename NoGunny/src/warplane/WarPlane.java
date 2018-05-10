@@ -69,17 +69,6 @@ public class WarPlane extends GameScreen {
 
         plane = new Plane(100, 350, 50, 50);
 
-//    	enemyAni = new Animation(100);
-//        AFrameOnImage g;
-//       g = new AFrameOnImage(0, 0, 176, 140);
-//     AFrameOnImage g;
-//      g = new AFrameOnImage(176, 0, 176, 140);
-//      AFrameOnImage g;
-//      g = new AFrameOnImage(353, 0, 176, 140);
-//       AFrameOnImage g;
-//        g = new AFrameOnImage(176, 0, 176, 140);
-//       enemy = new Enemy(0,0,0,0);        
-//        
         planeEnemy = new PlaneEnemy();
         ground = new Ground();
         mountain = new Mountain();
@@ -89,14 +78,13 @@ public class WarPlane extends GameScreen {
 
     public static void main(String[] args) {
         new WarPlane();
-        // new PlaneEnemy();
     }
 
     private void resetGame() {
         plane.setPos(110, 250);
         plane.setVt(0);
         plane.setLive(true);
-        score=0;
+        score = 0;
         planeEnemy.resetEnemy();
     }
 
@@ -109,7 +97,6 @@ public class WarPlane extends GameScreen {
             if (plane.getLive()) {
                 planeAni.updateMe(deltaTime);
             }
-            /// enemyAni.updateMe(deltaTime);
 
             plane.update(deltaTime);
             ground.update();
@@ -144,18 +131,13 @@ public class WarPlane extends GameScreen {
 
     @Override
     public void gamePaint(Graphics2D g2) {
-        
+
         g2.setColor(Color.decode("#b8baef"));
         g2.fillRect(0, 0, masterWidth, masterHeight);
 
         ground.Paint(g2);
         mountain.Paint(g2);
         planeEnemy.paint(g2);
-//        
-//        if (enemy!=null){
-//        	 enemyAni.paintAnims((int)enemy.getPosX(), (int)enemy.getPosY(), enemyImage, g2, 0, 0);
-//        }
-//       
 
         if (plane != null) {
             planeAni.paintAnims((int) plane.getPosX(), (int) plane.getPosY(), planeImage, g2, 0, 0);
@@ -169,6 +151,7 @@ public class WarPlane extends GameScreen {
             g2.setColor(Color.RED);
             g2.setFont(myFont);
             g2.drawString("Press space to turn back begin screen", 250, 300);
+            g2.drawString(" YOUR SCORE:" + score, 300, 260);
         }
         g2.setColor(Color.RED);
         g2.setFont(myFont);
