@@ -12,20 +12,19 @@ import pkg2dgamesframework.Objects;
  *
  * @author duanp
  */
-class Enemy extends Objects {
+public class Bullet extends Objects {
+     private Rectangle rect;
+    private boolean iscontactPlane = false;
 
-    private Rectangle rect;
-    private boolean isBehindEnemy = false;
-
-    public Enemy(int x, int y, int w, int h) {
-        super(x, y, w, h);
+    public Bullet(int x, int y, int w, int h) {
+        super(x,y,w,h);
+       
         rect = new Rectangle(x, y, w, h);
 
     }
 
     public void update() {
-        setPosX(getPosX() - 10);
-        rect.setLocation((int) this.getPosX(), (int) this.getPosY());
+        
     }
 
     public Rectangle getRectangle() {
@@ -33,11 +32,10 @@ class Enemy extends Objects {
     }
 
     public void setBehindEnemy(boolean b) {
-        isBehindEnemy = b;
+        iscontactPlane = b;
     }
 
     public boolean getBehindEnemy() {
-        return isBehindEnemy;
+        return iscontactPlane ;
     }
-
 }

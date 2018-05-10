@@ -26,15 +26,14 @@ public class PlaneEnemy {
     private BufferedImage enemyImage2;
     private Animation enemyAnimation;
 
-    Random rand = new Random();
-    int n = rand.nextInt(100) + 1;
+  
 
     public static int size = 3;
 
     public int getRandomY() {
         Random random = new Random();
         int a;
-        a = random.nextInt(100);
+        a = random.nextInt(90);
         return a;
     }
 
@@ -51,17 +50,17 @@ public class PlaneEnemy {
         } catch (IOException ex) {
         }
         Enemy enemy;
+        
         enemysQueue = new QueueList<Enemy>();
 
         for (int i = 0; i < 3; i++) {
 
             int deltaY = getRandomY();
-            enemy = new Enemy(830 + i * 300, 350 + deltaY, 93, 64);
+            enemy = new Enemy(830 + i * 300,  deltaY, 93, 64);
             enemysQueue.push(enemy);
 
-            enemy = new Enemy(830 + i * 300, deltaY, 93, 64);
+            enemy = new Enemy(830 + i * 300, -deltaY, 93, 64);
             enemysQueue.push(enemy);
-
         }
 
     }
@@ -69,7 +68,8 @@ public class PlaneEnemy {
     public void resetEnemy() {
         enemysQueue = new QueueList<Enemy>();
         Enemy enemy;
-
+        
+       
         for (int i = 0; i < 3; i++) {
             int deltaY = getRandomY();
             enemy = new Enemy(830 + i * 300, 350 + deltaY, 93, 64);
@@ -77,33 +77,40 @@ public class PlaneEnemy {
 
             enemy = new Enemy(830 + i * 300, deltaY, 93, 64);
             enemysQueue.push(enemy);
+            
+           
         }
     }
 
     public void update() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3 ; i++) {
             enemysQueue.get(i).update();
         }
-
         if (enemysQueue.get(0).getPosX() < -70) {
-
             int deltaY = getRandomY();
             Enemy enemy;
             enemy = enemysQueue.pop();
-            enemy.setPosX(enemysQueue.get(4).getPosX() + 300);
-            enemy.setPosY(350 + deltaY);
+            enemy.setPosX(enemysQueue.get(2).getPosX() + 300);
+            enemy.setPosY( deltaY);
             enemy.setBehindEnemy(false);
             enemysQueue.push(enemy);
-
+            
+        
+            enemy = enemysQueue.pop();
+            enemy.setPosX(enemysQueue.get(2).getPosX() + 400);
+            enemy.setPosY( deltaY+70);
+            enemy.setBehindEnemy(false);
+            enemysQueue.push(enemy);
+            
+            
+            
+            
         }
-
     }
 
     public void paint(Graphics2D g2) {
-        for (int i = 0; i < 3; i++) {
-
+        for (int i = 0; i < 4; i++) {
             g2.drawImage(enemyImage, (int) enemysQueue.get(i).getPosX(), (int) enemysQueue.get(i).getPosY(), null);
-
         }
 
     }

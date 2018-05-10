@@ -12,6 +12,9 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import pkg2dgamesframework.AFrameOnImage;
 import pkg2dgamesframework.Animation;
@@ -93,6 +96,7 @@ public class WarPlane extends GameScreen {
         if (currentScreen == beginGame) {
             resetGame();////va cham
         } else if (currentScreen == playGame) {
+            
 
             if (plane.getLive()) {
                 planeAni.updateMe(deltaTime);
@@ -140,6 +144,7 @@ public class WarPlane extends GameScreen {
         planeEnemy.paint(g2);
 
         if (plane != null) {
+            
             planeAni.paintAnims((int) plane.getPosX(), (int) plane.getPosY(), planeImage, g2, 0, 0);
         }
         if (currentScreen == beginGame) {
@@ -162,6 +167,11 @@ public class WarPlane extends GameScreen {
     public void keyAction(KeyEvent e, int Event) {
         if (Event == keyPressed) {
             if (currentScreen == beginGame) {
+                try {
+                TimeUnit.SECONDS.sleep((long) 0.8);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 currentScreen = playGame;
             } else if (currentScreen == playGame) {
                 if (plane.getLive()) {

@@ -36,8 +36,8 @@ public class Mountain {
     }
 
     public void Update() {
-        x1 -= 2;
-        x2 -= 2;
+        x1 -= 10;
+        x2 -= 10;
         if (x1 < 0) {
             x2 = x1 + 990;
         }
