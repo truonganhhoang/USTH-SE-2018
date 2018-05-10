@@ -10,8 +10,13 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +40,8 @@ public class WarPlane extends GameScreen {
     public static float g = 0.1f;
 
     private Plane plane;
-    private int score = 0;
+    private static int score = 0;
+    private static int highScore = 0;
 
     private Ground ground;
     private Mountain mountain;
@@ -44,6 +50,7 @@ public class WarPlane extends GameScreen {
     private int playGame = 1;
     private int overGame = 2;
     Font myFont = new Font("Serif", Font.BOLD, 20);
+    Font myFont2 = new Font("Serif", Font.BOLD, 40);
 
     private int currentScreen = beginGame;
 
@@ -81,6 +88,7 @@ public class WarPlane extends GameScreen {
 
     public static void main(String[] args) {
         new WarPlane();
+
     }
 
     private void resetGame() {
@@ -96,7 +104,6 @@ public class WarPlane extends GameScreen {
         if (currentScreen == beginGame) {
             resetGame();////va cham
         } else if (currentScreen == playGame) {
-            
 
             if (plane.getLive()) {
                 planeAni.updateMe(deltaTime);
@@ -105,7 +112,11 @@ public class WarPlane extends GameScreen {
             plane.update(deltaTime);
             ground.update();
             mountain.Update();
-            planeEnemy.update();
+            try {
+                planeEnemy.update();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             for (int i = 0; i < PlaneEnemy.size; i++) {
                 if (plane.getRectangle().intersects(planeEnemy.getEnemy(i).getRectangle())) {
@@ -115,18 +126,63 @@ public class WarPlane extends GameScreen {
             }
 
             for (int i = 0; i < planeEnemy.size; i++) {
-                if (plane.getPosX() > planeEnemy.getEnemy(i).getPosX() && !planeEnemy.getEnemy(i).getBehindEnemy()) {
+                if (plane.getPosX() > (planeEnemy.getEnemy(i).getPosX()) && !planeEnemy.getEnemy(i).getBehindEnemy()) {
                     score++;
                     planeEnemy.getEnemy(i).setBehindEnemy(true);
                 }
             }
+            File file = new File("test.txt");
+            try {
+                PrintWriter output = new PrintWriter(file);
+                output.println(score);
+                output.close();
+            } catch (FileNotFoundException ex) {
+                System.out.printf("ERROR: %s\n", ex);
+            }
+            try {
+                Scanner input = new Scanner(file);
+                int point = input.nextInt();
+                System.out.printf("Points: %d\n", point);
+            } catch (IOException ex) {
+                System.err.println("ERROR");
+            }
 
-            ///va cham ground
+            ///get high score
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line = reader.readLine();
+                while (line != null) // read the score file line by line
+                {
+                    try {
+                        int score = Integer.parseInt(line.trim());   // parse each line as an int
+                        if (score > highScore) // and keep track of the largest
+                        {
+                            highScore = score;
+                        }
+                    } catch (NumberFormatException e1) {
+                        // ignore invalid scores
+                        //System.err.println("ignoring invalid score: " + line);
+                    }
+                    line = reader.readLine();
+                }
+                reader.close();
+
+            } catch (IOException ex) {
+                System.err.println("ERROR reading scores from file");
+            }
+
+            //va cham ground
             if (plane.getPosY() + plane.getH() > ground.getYGround()) {
                 currentScreen = overGame;
             }
             if (plane.getPosY() + plane.getH() < 0) {
                 currentScreen = overGame;
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         } else if (currentScreen == overGame) {
 
@@ -144,7 +200,7 @@ public class WarPlane extends GameScreen {
         planeEnemy.paint(g2);
 
         if (plane != null) {
-            
+
             planeAni.paintAnims((int) plane.getPosX(), (int) plane.getPosY(), planeImage, g2, 0, 0);
         }
         if (currentScreen == beginGame) {
@@ -155,8 +211,12 @@ public class WarPlane extends GameScreen {
         if (currentScreen == overGame) {
             g2.setColor(Color.RED);
             g2.setFont(myFont);
-            g2.drawString("Press space to turn back begin screen", 250, 300);
-            g2.drawString(" YOUR SCORE:" + score, 300, 260);
+            g2.drawString("Press space to turn back begin screen", 250, 320);
+            g2.drawString(" YOUR SCORE:" + score, 300, 280);
+            g2.drawString(" HIGHSCORE:" + highScore, 300, 300);
+            g2.setColor(Color.RED);
+            g2.setFont(myFont2);
+            g2.drawString("---You Died---", 260, 240);
         }
         g2.setColor(Color.RED);
         g2.setFont(myFont);
@@ -168,10 +228,10 @@ public class WarPlane extends GameScreen {
         if (Event == keyPressed) {
             if (currentScreen == beginGame) {
                 try {
-                TimeUnit.SECONDS.sleep((long) 0.8);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                    TimeUnit.SECONDS.sleep((long) 0.8);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 currentScreen = playGame;
             } else if (currentScreen == playGame) {
                 if (plane.getLive()) {

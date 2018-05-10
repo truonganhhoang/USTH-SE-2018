@@ -33,7 +33,7 @@ public class PlaneEnemy {
     public int getRandomY() {
         Random random = new Random();
         int a;
-        a = random.nextInt(90);
+        a = random.nextInt(100);
         return a;
     }
 
@@ -82,7 +82,7 @@ public class PlaneEnemy {
         }
     }
 
-    public void update() {
+    public void update() throws InterruptedException {
         for (int i = 0; i < 3 ; i++) {
             enemysQueue.get(i).update();
         }
@@ -98,7 +98,7 @@ public class PlaneEnemy {
         
             enemy = enemysQueue.pop();
             enemy.setPosX(enemysQueue.get(2).getPosX() + 400);
-            enemy.setPosY( deltaY+70);
+            enemy.setPosY( deltaY+100);
             enemy.setBehindEnemy(false);
             enemysQueue.push(enemy);
             
