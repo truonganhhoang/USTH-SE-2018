@@ -63,20 +63,20 @@ public class DbHelper extends SQLiteOpenHelper {
     public int insertExercise(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(ExerciseTable.Cols.NAME,name);
+        values.put(ExerciseTable.Cols.NAME, name);
         int id = (int) db.insert(ExerciseTable.NAME, ExerciseTable.Cols.NAME, values);
         db.close();
         return id;
     }
 
-    public long insertWorkout(String name, int rounds, int restExercises, int restRounds) {
+    public int insertWorkout(String name, int rounds, int restExercises, int restRounds) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(WorkoutTable.Cols.NAME, name);
         values.put(WorkoutTable.Cols.ROUNDS, rounds);
         values.put(WorkoutTable.Cols.RESTEXERCISES, restExercises);
         values.put(WorkoutTable.Cols.RESTROUNDS, restRounds);
-        long id = db.insert(WorkoutTable.NAME, WorkoutTable.Cols.NAME, values);
+        int id = (int) db.insert(WorkoutTable.NAME, WorkoutTable.Cols.NAME, values);
         db.close();
         return id;
     }
