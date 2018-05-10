@@ -40,7 +40,7 @@ public class GameThread extends JPanel implements Runnable{
         this.thread = new Thread(this);
         
     }
-    public void StartThread(){
+    public void startThread(){
         thread.start();
     }
     public void paint(Graphics g){
@@ -53,7 +53,7 @@ public class GameThread extends JPanel implements Runnable{
         }
     }
 
-    private void UpdateSize(){
+    private void updateSize(){
         if(this.getWidth()<=0) return;
         
         context.customWidth = this.getWidth();
@@ -76,7 +76,7 @@ public class GameThread extends JPanel implements Runnable{
         
         while(true){    
             
-            UpdateSize();
+            updateSize();
             
             context.gameUpdate(System.currentTimeMillis());
             try{

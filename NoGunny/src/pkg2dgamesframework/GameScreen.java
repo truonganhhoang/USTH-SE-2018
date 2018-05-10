@@ -59,7 +59,7 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     }
     
     public void beginGame(){
-        gThread.StartThread();
+        gThread.startThread();
     }
     
     private void InitThread(){
