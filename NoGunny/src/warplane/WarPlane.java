@@ -96,6 +96,8 @@ public class WarPlane extends GameScreen {
         plane.setPos(110, 250);
         plane.setVt(0);
         plane.setLive(true);
+        score=0;
+        planeEnemy.resetEnemy();
     }
 
     @Override

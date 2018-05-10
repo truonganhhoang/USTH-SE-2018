@@ -39,14 +39,29 @@ public class PlaneEnemy {
     
 
     public PlaneEnemy() {
-        enemysQueue = new QueueList<Enemy>();
+       
         try {
             enemyImage = ImageIO.read(new File("Assets/Enemy2.png"));
 
         } catch (IOException ex) {
         }
         Enemy enemy;
+         enemysQueue = new QueueList<Enemy>();
+        for (int i = 0; i < 3; i++) {
+            enemy = new Enemy(830 + i * 300, 350, 93, 64);
+            enemysQueue.push(enemy);
 
+            enemy = new Enemy(830 + i * 300, n, 93, 64);
+            enemysQueue.push(enemy);
+
+        }
+        
+        
+    }
+
+    public void resetEnemy(){
+        enemysQueue = new QueueList<Enemy>();
+        Enemy enemy;
         for (int i = 0; i < 3; i++) {
             enemy = new Enemy(830 + i * 300, 350, 93, 64);
             enemysQueue.push(enemy);
@@ -56,7 +71,6 @@ public class PlaneEnemy {
 
         }
     }
-
     public void update() {
         for (int i = 0; i < 3; i++) {
             enemysQueue.get(i).update();
