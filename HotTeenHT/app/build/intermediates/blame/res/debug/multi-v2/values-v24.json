@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\proj\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\laikh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7f43dc84b466ed646320f5dbf643ba60\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\47462c7ee18ca464c0f43adbc425db3a\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\laikh\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\e08687f40bd843b29b507c43241f471b\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\c307b654a6640e15937badcbecf61ca2\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
