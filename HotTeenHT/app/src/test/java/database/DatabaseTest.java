@@ -46,5 +46,11 @@ public class DatabaseTest {
         assertEquals(expectedRestExercises, dbHelper.getRestExercises(workoutId));
         assertEquals(expectedRestRounds, dbHelper.getRestRounds(workoutId));
         assertEquals(expectedExerciseName, dbHelper.getExerciseName(exerciseId));
+
+        String expectedNewName = "plank";
+        dbHelper.renameWorkout(workoutId, expectedNewName);
+        assertEquals(expectedNewName, dbHelper.getWorkoutName(workoutId));
+        dbHelper.deleteWorkout(workoutId);
+        assertEquals(0, dbHelper.getWorkoutCount());
     }
 }

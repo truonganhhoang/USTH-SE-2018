@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import database.DbHelper;
 
 public class NameYourWorkout extends AppCompatActivity {
     private EditText workoutNameField;
     private Button okButton;
+    private String workoutName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +27,15 @@ public class NameYourWorkout extends AppCompatActivity {
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), CreateNewWorkout.class);
-                i.putExtra("WorkoutName", workoutNameField.getText().toString());
-                startActivity(i);
-                finish();
+                workoutName = workoutNameField.getText().toString();
+                if (!workoutName.isEmpty()) {
+                    Intent i = new Intent(getApplicationContext(), CreateNewWorkout.class);
+                    i.putExtra("WorkoutName", workoutName);
+                    startActivity(i);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please enter a name", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

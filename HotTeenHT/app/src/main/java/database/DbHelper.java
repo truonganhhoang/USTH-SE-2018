@@ -3,6 +3,7 @@ package database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -65,6 +66,12 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + ExerciseTable.NAME);
         db.execSQL("DROP TABLE IF EXISTS " + RelationshipTable.NAME);
         onCreate(db);
+    }
+
+    public int getWorkoutCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, WorkoutTable.NAME);
+        return numRows;
     }
 
     public int insertExercise(String name) {
@@ -166,5 +173,22 @@ public class DbHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return restRounds;
+    }
+
+    public void renameWorkout(int workoutId, String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(WorkoutTable.Cols.NAME, name);
+        db.update(WorkoutTable.NAME,
+                values,
+                WorkoutTable.Cols.ID + " = ?",
+                new String[] {Integer.toString(workoutId)});
+    }
+
+    public void deleteWorkout(int workoutId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(WorkoutTable.NAME,
+                WorkoutTable.Cols.ID + "=" + Integer.toString(workoutId),
+                null);
     }
 }
