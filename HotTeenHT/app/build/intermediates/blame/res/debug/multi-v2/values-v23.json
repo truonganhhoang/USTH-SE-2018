@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Codes\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "E:\\proj\\USTH-SE-2018\\HotTeenHT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\47462c7ee18ca464c0f43adbc425db3a\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\laikh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7f43dc84b466ed646320f5dbf643ba60\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Minh Duc\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.1.1.aar\\2e07a655d797eb035cf6f6ab160def29\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\laikh\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.1.1.aar\\a80481577abb0cfa368315ab537a6ed9\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
