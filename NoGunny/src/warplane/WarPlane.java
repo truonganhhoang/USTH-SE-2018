@@ -49,9 +49,12 @@ public class WarPlane extends GameScreen {
     private int beginGame = 0;
     private int playGame = 1;
     private int overGame = 2;
+    private int pauseGame = 3;
     Font myFont = new Font("Serif", Font.BOLD, 20);
     Font myFont2 = new Font("Serif", Font.BOLD, 40);
-
+    private long deltaTime;
+    private long beginTimePause;
+    private long finalTimePause;
     private int currentScreen = beginGame;
 
     public WarPlane() {
@@ -225,7 +228,7 @@ public class WarPlane extends GameScreen {
 
     @Override
     public void keyAction(KeyEvent e, int Event) {
-        if (Event == keyPressed) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             if (currentScreen == beginGame) {
                 try {
                     TimeUnit.SECONDS.sleep((long) 0.8);
@@ -237,9 +240,63 @@ public class WarPlane extends GameScreen {
                 if (plane.getLive()) {
                     plane.fly();
                 }
+                plane.setPosX(plane.getPosX() - 4);
+
             } else if (currentScreen == overGame) {
                 currentScreen = beginGame;
             }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            System.out.println("you press Enter  ");
+        }
+//        if(currentScreen == playGame){
+//            if(e.getKeyCode() ==KeyEvent.VK_P){
+//                  System.out.println("you press p1 ");
+//                  currentScreen=pauseGame;
+//                beginTimePause= System.nanoTime();
+//                if(e.getKeyCode() ==KeyEvent.VK_P){
+//                      System.out.println("you press p lan 2 ");
+//                    finalTimePause=System.nanoTime();
+//                    
+//                }
+//                deltaTime=finalTimePause-beginTimePause;
+//          
+//                try {
+//                    TimeUnit.SECONDS.sleep(deltaTime/1000000);
+//                } catch (InterruptedException ex) {
+//                    Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            
+//        }
+
+        //       }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            System.out.println("you press right  ");
+            plane.setPosX(plane.getPosX() + 2);
+            if (plane.getLive()) {
+                plane.fly();
+            }
+
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            System.out.println("you press down  ");
+            plane.setPosY(plane.getPosY() + 4);
+
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            System.out.println("you press left  ");
+            plane.setPosX(plane.getPosX() - 2);
+            if (plane.getLive()) {
+                plane.flyBack();
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            System.out.println("you press up  ");
+            plane.setPosY(plane.getPosY() - 4);
+            if (plane.getLive()) {
+                plane.fly();
+            }
+
         }
 
     }

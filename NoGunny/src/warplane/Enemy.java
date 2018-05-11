@@ -30,7 +30,12 @@ class Enemy extends Objects {
       
        if(score>5){
             setPosX(getPosX() - 25);
-        }else setPosX(getPosX() - 10);
+        }else if(score>10){
+        setPosX(getPosX() - 30-(score));
+    }else{
+            setPosX(getPosX() - 10);
+            
+    }
         //setPosX(getPosX() - 10);
        
         rect.setLocation((int) this.getPosX(), (int) this.getPosY());
