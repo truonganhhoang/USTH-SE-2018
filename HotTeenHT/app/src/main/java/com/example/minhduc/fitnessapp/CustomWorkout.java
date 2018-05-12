@@ -35,6 +35,7 @@ public class CustomWorkout extends AppCompatActivity {
     private Cursor cursor;
     private SQLiteDatabase db;
     private SimpleCursorAdapter workoutAdapter;
+    private String text = "Name Here";
 
     private Cursor getAllWorkoutsCursor() {
         return db.query(DbSchema.WorkoutTable.NAME,
@@ -139,6 +140,8 @@ public class CustomWorkout extends AppCompatActivity {
         builder.setTitle("Enter a new name:");
 
         final EditText input = new EditText(this);
+        input.setText("Name Here");
+
         builder.setView(input);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
