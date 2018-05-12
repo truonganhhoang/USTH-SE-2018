@@ -17,13 +17,13 @@ IMAGES, SOUNDS, HITMASKS = {}, {}, {}
 
 # list of all possible players (tuple of 3 positions of flap)
 PLAYERS_LIST = ( 
-    # red bird
+    # mario 
     (
         'assets/sprites/mario0.png',
         'assets/sprites/mario1.png',
         'assets/sprites/mario2.png',
     ),
-    # blue bird
+    # other sprites in the future
     (
         # amount by which base can maximum shift to left
         'assets/sprites/mario0.png',
@@ -31,7 +31,7 @@ PLAYERS_LIST = (
         'assets/sprites/mario2.png',
     ),
     
-    # yellow bird
+    # other sprites in the future
     (
         'assets/sprites/mario0.png',
         'assets/sprites/mario1.png',
