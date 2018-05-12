@@ -10,32 +10,32 @@ FPS = 50
 SCREENWIDTH = 288
 SCREENHEIGHT = 512
 # amount by which base can maximum shift to left
-PIPEGAPSIZE = 150  # gap between upper and lower part of pipe
+PIPEGAPSIZE = 120  # gap between upper and lower part of pipe
 BASEY = SCREENHEIGHT * 0.79
 # image, sound and hitmask  dicts
 IMAGES, SOUNDS, HITMASKS = {}, {}, {}
 
 # list of all possible players (tuple of 3 positions of flap)
-PLAYERS_LIST = ( 
-    # mario 
+PLAYERS_LIST = (
+    # mario
     (
-        'assets/sprites/mario0.png',
         'assets/sprites/mario1.png',
         'assets/sprites/mario2.png',
+        'assets/sprites/mario3.png',
     ),
-    # other sprites in the future
+    # sonic
     (
         # amount by which base can maximum shift to left
-        'assets/sprites/mario0.png',
-        'assets/sprites/mario1.png',
-        'assets/sprites/mario2.png',
+        'assets/sprites/sonic1.png',
+        'assets/sprites/sonic2.png',
+        'assets/sprites/sonic3.png',
     ),
-    
-    # other sprites in the future
+
+    # zero
     (
-        'assets/sprites/mario0.png',
-        'assets/sprites/mario1.png',
-        'assets/sprites/mario2.png',
+        'assets/sprites/zero1.gif',
+        'assets/sprites/zero2.gif',
+        'assets/sprites/zero3.gif',
     ),
 )
 
@@ -100,8 +100,13 @@ def main():
     SOUNDS['point'] = pygame.mixer.Sound('assets/audio/point' + soundExt)
     SOUNDS['swoosh'] = pygame.mixer.Sound('assets/audio/swoosh' + soundExt)
     SOUNDS['wing'] = pygame.mixer.Sound('assets/audio/wing' + soundExt)
+    SOUNDS['background'] = pygame.mixer.Sound(
+        'assets/audio/background' + soundExt)
+
+    SOUNDS['background'].play()
 
     while True:
+
         # select random background sprites
         randBg = random.randint(0, len(BACKGROUNDS_LIST) - 1)
         IMAGES['background'] = pygame.image.load(
@@ -167,17 +172,9 @@ def showWelcomeAnimation():
             if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 pygame.quit()
                 sys.exit()
-            
-
-
-            # TODO: ADD ARROW KEYS
-
-
-
 
             if event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
 
-                	
                 # make first flap sound and return values for mainGame
                 SOUNDS['wing'].play()
                 return {
@@ -209,7 +206,7 @@ def mainGame(movementInfo):
     playerIndexGen = movementInfo['playerIndexGen']
     playerx = int(SCREENWIDTH * 0.2)
     playery = movementInfo['playery']
-
+    move = pygame.key.get_pressed()
     basex = movementInfo['basex']
     baseShift = IMAGES['base'].get_width() - IMAGES['background'].get_width()
 
@@ -240,6 +237,7 @@ def mainGame(movementInfo):
     playerVelRot = 3   # angular speed
     playerRotThr = 20   # rotation threshold
     playerFlapAcc = -9   # players speed on flapping
+    playerFlapAcc2 = 9
     playerFlapped = False  # True when player flaps
 
     while True:
@@ -248,14 +246,19 @@ def mainGame(movementInfo):
                 pygame.quit()
                 sys.exit()
             
-            # TODO: ADD ARROW KEYS HERE
-
-
+            # up key
             if event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
                 if playery > -2 * IMAGES['player'][0].get_height():
                     playerVelY = playerFlapAcc
-                    playerFlapped = True
+                    playerFlapped = True 
                     SOUNDS['wing'].play()
+            # down key
+            if event.type == KEYDOWN and (event.key == K_DOWN):
+                if playery > -2 * IMAGES['player'][0].get_height():
+                    playerVelY = playerFlapAcc2
+                    playerFlapped = True
+                    SOUNDS['wing'].play()                    
+
 
         # check for crash here
         crashTest = checkCrash({'x': playerx, 'y': playery, 'index': playerIndex},
@@ -368,8 +371,6 @@ def showGameOverScreen(crashInfo):
                 pygame.quit()
                 sys.exit()
 
-            # TODO: ADD ARROW KEYS HERE
-
             if event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
                 if playery + playerHeight >= BASEY - 1:
                     return
@@ -389,9 +390,9 @@ def showGameOverScreen(crashInfo):
 
         # draw sprites
         SCREEN.blit(IMAGES['background'], (0, 0))
-        SCREEN.blit(IMAGES['gameover'],(50 , 120))
+        SCREEN.blit(IMAGES['gameover'], (50, 120))
 
-        ## remain the pipes when displaying "game over"
+        # remain the pipes when displaying "game over"
         # for uPipe, lPipe in zip(upperPipes, lowerPipes):
         #     SCREEN.blit(IMAGES['pipe'][0], (uPipe['x'], uPipe['y']))
         #     SCREEN.blit(IMAGES['pipe'][1], (lPipe['x'], lPipe['y']))
