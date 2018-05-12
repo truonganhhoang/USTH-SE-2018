@@ -1,5 +1,5 @@
 # USTH Software Engineering 2018
-## Project: Not Flappy Birdz
+## Project: Not Flappy Bird
 * inspired by: [Flappy Bird](https://en.wikipedia.org/wiki/Flappy_Bird) and [Mari0](http://stabyourself.net/mari0/)
 * using: [Python](https://www.python.org/)
 * first function: the bird movement
