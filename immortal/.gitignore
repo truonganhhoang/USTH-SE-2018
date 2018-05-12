@@ -5,6 +5,3 @@
 /.vscode/*
 /.htaccess
 /.bash_history
-/ckeditor/*
-/application/third_party/*
-/application/libraries/*
