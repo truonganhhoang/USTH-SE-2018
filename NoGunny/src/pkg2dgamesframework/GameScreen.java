@@ -79,3 +79,4 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     public abstract void keyAction(KeyEvent e, int Event);
     
 }
+

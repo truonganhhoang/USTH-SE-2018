@@ -35,7 +35,7 @@ public class WarPlane extends GameScreen {
     private BufferedImage planeImage;
     private Animation planeAni;
 
-    // gia toc
+    // Gravity acceleration
     public static float g = 0.1f;
 
     private Plane plane;
@@ -47,13 +47,9 @@ public class WarPlane extends GameScreen {
     private int beginGame = 0;
     private int playGame = 1;
     private int overGame = 2;
-    private int pauseGame = 3;
+    private int currentScreen = beginGame;
     Font myFont = new Font("Serif", Font.BOLD, 20);
     Font myFont2 = new Font("Serif", Font.BOLD, 40);
-    private long deltaTime;
-    private long beginTimePause;
-    private long finalTimePause;
-    private int currentScreen = beginGame;
    
 
     public WarPlane() {
@@ -243,27 +239,6 @@ public class WarPlane extends GameScreen {
                 currentScreen = beginGame;
             }
         }
-
-//        if(currentScreen == playGame){
-//            if(e.getKeyCode() ==KeyEvent.VK_P){
-//                  System.out.println("you press p1 ");
-//                  currentScreen=pauseGame;
-//                beginTimePause= System.nanoTime();
-//                if(e.getKeyCode() ==KeyEvent.VK_P){
-//                      System.out.println("you press p lan 2 ");
-//                    finalTimePause=System.nanoTime();
-//                    
-//                }
-//                deltaTime=finalTimePause-beginTimePause;
-//          
-//                try {
-//                    TimeUnit.SECONDS.sleep(deltaTime/1000000);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            
-//        }
-        //       }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             System.out.println("you press right  ");
             plane.setPosX(plane.getPosX() + 2);

@@ -15,20 +15,21 @@ import java.awt.image.BufferedImage;
  * @author phamn
  */
 public class AFrameOnImage {
-
+    
     private boolean enablePaintRect = false;
     private int[] dimsBounds = new int[4];
-
+    
     public AFrameOnImage(int xOnImage, int yOnImage, int w, int h) {
         dimsBounds[0] = xOnImage;
         dimsBounds[1] = yOnImage;
         dimsBounds[2] = w;
         dimsBounds[3] = h;
     }
-
+    
     public void visibleRectDebug(boolean enable) {
         enablePaintRect = enable;
     }
+    
     public int[] getBounds() {
         return dimsBounds;
     }

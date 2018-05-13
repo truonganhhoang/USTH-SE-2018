@@ -43,7 +43,7 @@ public class Ground {
         g2.drawImage(groundImage, x1, y1, null);
         g2.drawImage(groundImage, x2, y2, null);
     }
-    public int getYGround() {/////lay gia tri cua i de va cham
+    public int getYGround() {// return the value y of ground
         return y1;
     }
 }

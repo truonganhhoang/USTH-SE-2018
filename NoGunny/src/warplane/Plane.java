@@ -14,8 +14,8 @@ import pkg2dgamesframework.SoundPlayer;
  * @author duanp
  */
 public class Plane extends Objects {
+    
     private float vt = 0; //velocity of gravity
-    private float vt2 = 0; 
     private Rectangle rect;
     private boolean isLive = true;
     private boolean isFlying = false;  ///fall down effect
@@ -28,9 +28,9 @@ public class Plane extends Objects {
         super(x, y, w, h);
         rect = new Rectangle(x, y, w, h);
         
-        contactSound= new SoundPlayer(new File("Assets/123.wav"));
+        contactSound= new SoundPlayer(new File("Assets/contact.wav"));
         //planeSound= new SoundPlayer(new File("Assets/dongco.wav"));
-        introSound= new SoundPlayer(new File("Assets/start.wav"));
+        introSound= new SoundPlayer(new File("Assets/start3.wav"));
     }
 
     public Rectangle getRectangle() {
@@ -59,8 +59,7 @@ public class Plane extends Objects {
     }
     public void fly() {
         vt = -3;
-         //planeSound.play();
-           
+         //planeSound.play();      
     }
     public void flyBack(){
         vt=-(long) 0.2;

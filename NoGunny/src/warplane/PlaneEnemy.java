@@ -11,8 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import javax.imageio.ImageIO;
-
-import javafx.animation.Animation;
 import pkg2dgamesframework.QueueList;
 
 /**
@@ -47,11 +45,8 @@ public class PlaneEnemy {
             int deltaY = getRandomY();
             enemy = new Enemy(830 +  300, -350 + deltaY, 93, 64);
             enemysQueue.push(enemy);
-
             enemy = new Enemy(830 + 300, 200 + deltaY, 93, 64);
             enemysQueue.push(enemy);
-        
-
     }
 
     public void resetEnemy() {
@@ -61,7 +56,6 @@ public class PlaneEnemy {
             int deltaY = getRandomY();
             enemy = new Enemy(830 + i * 300, -100 + deltaY, 93, 64);
             enemysQueue.push(enemy);
-
             enemy = new Enemy(830 + i * 200, 200 + deltaY, 93, 64);
             enemysQueue.push(enemy);
         }

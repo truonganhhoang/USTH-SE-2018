@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/pkg2dgamesframework/AFrameOnImage.java</file>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/pkg2dgamesframework/Animation.java</file>
+            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/warplane/Enemy.java</file>
             <file>file:/C:/git/USTH-SE-2018/NoGunny/src/warplane/Plane.java</file>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/pkg2dgamesframework/GameScreen.java</file>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/pkg2dgamesframework/Objects.java</file>
+            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/warplane/Ground.java</file>
             <file>file:/C:/git/USTH-SE-2018/NoGunny/src/warplane/WarPlane.java</file>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/nbproject/build-impl.xml</file>
             <file>file:/C:/git/USTH-SE-2018/NoGunny/src/warplane/PlaneEnemy.java</file>
-            <file>file:/C:/git/USTH-SE-2018/NoGunny/src/pkg2dgamesframework/SoundPlayer.java</file>
         </group>
     </open-files>
 </project-private>
