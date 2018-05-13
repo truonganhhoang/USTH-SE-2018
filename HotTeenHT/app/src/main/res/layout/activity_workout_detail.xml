@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewWorkoutName"
         android:text="SetupDetail"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textColor="@color/black"
          />
 
@@ -42,6 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:text="START" />
+        android:background="@color/opaque_red"
+        android:text="START"
+        android:textColor="@color/white"
+        android:textSize="30dp"/>
 
 </RelativeLayout>

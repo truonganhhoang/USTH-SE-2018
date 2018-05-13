@@ -41,7 +41,10 @@
                 android:value="com.example.minhduc.fitnessapp.CustomWorkout" />
         </activity>
         <activity android:name=".ChooseExercise" />
-        <activity android:name=".WorkoutDetail"></activity>
+        <activity android:name=".WorkoutDetail" />
+        <activity android:name=".Work" />
+        <activity android:name=".Rest" />
+        <activity android:name=".FinishWorkout"></activity>
     </application>
 
 </manifest>
