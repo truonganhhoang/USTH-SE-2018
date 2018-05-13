@@ -6,6 +6,8 @@
 package pkg2dgamesframework;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -18,6 +20,7 @@ import javax.sound.sampled.Clip;
 public class SoundPlayer {
     
     private Clip clip;
+
     
     public SoundPlayer(File path){
         try{

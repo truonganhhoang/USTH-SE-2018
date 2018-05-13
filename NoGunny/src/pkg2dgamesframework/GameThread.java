@@ -19,26 +19,18 @@ import pkg2dgamesframework.GameScreen;
 public class GameThread extends JPanel implements Runnable {
 
     private GameScreen context;
-
     private Thread thread;
-
     private Graphics ThisGraphics;
-
     public static int FPS = 70;
-
     private BufferedImage buffImage;
-
     private int MasterWidth, MasterHeight;
     public static float scaleX_ = 1, scaleY_ = 1;
 
     public GameThread(GameScreen context) {
         this.context = context;
-
         MasterWidth = context.customWidth;
         MasterHeight = context.customHeight;
-
         this.thread = new Thread(this);
-
     }
 
     public void startThread() {
@@ -59,7 +51,6 @@ public class GameThread extends JPanel implements Runnable {
         if (this.getWidth() <= 0) {
             return;
         }
-
         context.customWidth = this.getWidth();
         context.customHeight = this.getHeight();
 
@@ -69,27 +60,21 @@ public class GameThread extends JPanel implements Runnable {
 
     @Override
     public void run() {
-
         long T = 1000 / FPS;
         long TimeBuffer = T / 2;
-
         long BeginTime = System.currentTimeMillis();
         long EndTime;
         long sleepTime;
 
         while (true) {
-
             updateSize();
-
             context.gameUpdate(System.currentTimeMillis());
             try {
-
                 buffImage = new BufferedImage(MasterWidth, MasterHeight, BufferedImage.TYPE_INT_ARGB);
                 if (buffImage == null) {
                     return;
                 }
                 Graphics2D g2 = (Graphics2D) buffImage.getGraphics();
-
                 if (g2 != null) {
                     context.gamePaint(g2);
                 }
@@ -97,20 +82,16 @@ public class GameThread extends JPanel implements Runnable {
             } catch (Exception myException) {
                 myException.printStackTrace();
             }
-
             repaint();
-
             EndTime = System.currentTimeMillis();
             sleepTime = T - (EndTime - BeginTime);
             if (sleepTime < 0) {
                 sleepTime = TimeBuffer;
             }
-
             try {
                 Thread.sleep(sleepTime);
             } catch (InterruptedException ex) {
             }
-
             BeginTime = System.currentTimeMillis();
         }
     }

@@ -16,11 +16,9 @@ import javax.imageio.ImageIO;
  * @author duanp
  */
 public class Ground {
-
     private BufferedImage groundImage;
     private int x1, x2;
     private final int y1, y2;
-
     public Ground() {
         try {
             groundImage = ImageIO.read(new File("Assets/ground5.png"));
@@ -31,7 +29,6 @@ public class Ground {
         x2 = x1 + 824;
         y2 = 470;
     }
-
     public void update() {
         x1 -= 10;
         x2 -= 10;
@@ -42,14 +39,11 @@ public class Ground {
             x1 = x2 + 824;
         }
     }
-
     public void Paint(Graphics2D g2) {
         g2.drawImage(groundImage, x1, y1, null);
         g2.drawImage(groundImage, x2, y2, null);
     }
-
     public int getYGround() {/////lay gia tri cua i de va cham
         return y1;
     }
-
 }

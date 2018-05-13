@@ -25,6 +25,7 @@ import pkg2dgamesframework.AFrameOnImage;
 import pkg2dgamesframework.Animation;
 import pkg2dgamesframework.GameScreen;
 
+
 /**
  *
  * @author duanp
@@ -32,17 +33,14 @@ import pkg2dgamesframework.GameScreen;
 public class WarPlane extends GameScreen {
 
     private BufferedImage planeImage;
-
     private Animation planeAni;
 
-    private Animation enemyAni;
-
+    // gia toc
     public static float g = 0.1f;
 
     private Plane plane;
     private static int score = 0;
     private static int highScore = 0;
-
     private Ground ground;
     private Mountain mountain;
     private PlaneEnemy planeEnemy;
@@ -56,15 +54,14 @@ public class WarPlane extends GameScreen {
     private long beginTimePause;
     private long finalTimePause;
     private int currentScreen = beginGame;
+   
 
     public WarPlane() {
         super(800, 600);
         try {
             planeImage = ImageIO.read(new File("Assets/phane2.gif"));
-
         } catch (IOException ex) {
         }
-
         planeAni = new Animation(100);
         AFrameOnImage f;
         f = new AFrameOnImage(0, 0, 120, 68);
@@ -87,11 +84,13 @@ public class WarPlane extends GameScreen {
         mountain = new Mountain();
 
         beginGame();
+        plane.introSound.play();
+         
     }
 
     public static void main(String[] args) {
-        new WarPlane();
-
+        new WarPlane();    
+        
     }
 
     private void resetGame() {
@@ -100,18 +99,21 @@ public class WarPlane extends GameScreen {
         plane.setLive(true);
         score = 0;
         planeEnemy.resetEnemy();
+       // plane.introSound.close();
     }
 
     @Override
     public void gameUpdate(long deltaTime) {
+        
         if (currentScreen == beginGame) {
-            resetGame();////va cham
+           
+            resetGame();//when they contact
+           
         } else if (currentScreen == playGame) {
-
+            //plane.introSound.close();
             if (plane.getLive()) {
-                planeAni.updateMe(deltaTime);
+                planeAni.updateMe(deltaTime);        
             }
-
             plane.update(deltaTime);
             ground.update();
             mountain.Update();
@@ -123,11 +125,12 @@ public class WarPlane extends GameScreen {
 
             for (int i = 0; i < PlaneEnemy.size; i++) {
                 if (plane.getRectangle().intersects(planeEnemy.getEnemy(i).getRectangle())) {
+                   if( plane.getLive())  plane.contactSound.play(); 
                     plane.setLive(false);
                     System.out.println("set Live = false");
+                     
                 }
             }
-
             for (int i = 0; i < planeEnemy.size; i++) {
                 if (plane.getPosX() > (planeEnemy.getEnemy(i).getPosX()) && !planeEnemy.getEnemy(i).getBehindEnemy()) {
                     score++;
@@ -149,7 +152,6 @@ public class WarPlane extends GameScreen {
             } catch (IOException ex) {
                 System.err.println("ERROR");
             }
-
             ///get high score
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -169,41 +171,36 @@ public class WarPlane extends GameScreen {
                     line = reader.readLine();
                 }
                 reader.close();
-
             } catch (IOException ex) {
                 System.err.println("ERROR reading scores from file");
             }
-
-            //va cham ground
+            //contact with ground
             if (plane.getPosY() + plane.getH() > ground.getYGround()) {
                 currentScreen = overGame;
+                plane.introSound.play();
             }
             if (plane.getPosY() + plane.getH() < 0) {
                 currentScreen = overGame;
+                plane.introSound.play();
                 try {
                     TimeUnit.SECONDS.sleep(2);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(WarPlane.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
             }
         } else if (currentScreen == overGame) {
-
+           
         }
     }
 
     @Override
     public void gamePaint(Graphics2D g2) {
-
         g2.setColor(Color.decode("#b8baef"));
         g2.fillRect(0, 0, masterWidth, masterHeight);
-
         ground.Paint(g2);
         mountain.Paint(g2);
         planeEnemy.paint(g2);
-
         if (plane != null) {
-
             planeAni.paintAnims((int) plane.getPosX(), (int) plane.getPosY(), planeImage, g2, 0, 0);
         }
         if (currentScreen == beginGame) {
@@ -246,9 +243,7 @@ public class WarPlane extends GameScreen {
                 currentScreen = beginGame;
             }
         }
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("you press Enter  ");
-        }
+
 //        if(currentScreen == playGame){
 //            if(e.getKeyCode() ==KeyEvent.VK_P){
 //                  System.out.println("you press p1 ");
@@ -268,7 +263,6 @@ public class WarPlane extends GameScreen {
 //                }
 //            
 //        }
-
         //       }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             System.out.println("you press right  ");
@@ -276,7 +270,6 @@ public class WarPlane extends GameScreen {
             if (plane.getLive()) {
                 plane.fly();
             }
-
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             System.out.println("you press down  ");
@@ -296,9 +289,7 @@ public class WarPlane extends GameScreen {
             if (plane.getLive()) {
                 plane.fly();
             }
-
         }
-
     }
 
 }

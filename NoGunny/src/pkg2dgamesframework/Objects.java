@@ -17,14 +17,12 @@ public class Objects {
     public Objects(){
          posX = posY = w = h = 0;
     }
-    
     public Objects(float x, float y, float w, float h){
         this.posX = x;
         this.posY = y;
         this.w = w;
         this.h = h;
-    }
-    
+    }   
     public boolean isCollisionHappenWith(float x, float y){
         if(x > posX && x < posX + w && y > posY && y < posY + h) 
             return true;

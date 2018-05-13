@@ -18,23 +18,18 @@ import javax.imageio.ImageIO;
 public class Mountain {
 
     private BufferedImage mountainImage;
-
     private int x1, x2;
     private final int y1, y2;
-
     public Mountain() {
         try {
             mountainImage = ImageIO.read(new File("Assets/moutain.png"));
         } catch (IOException ex) {
         }
-
         x1 = -10;
         y1 = 270;
         x2 = x1 + 990;
         y2 = 270;
-
     }
-
     public void Update() {
         x1 -= 10;
         x2 -= 10;
@@ -44,14 +39,10 @@ public class Mountain {
         if (x2 < -0) {
             x1 = x2 + 990;
         }
-
     }
-
     public void Paint(Graphics2D g2) {
-
         g2.drawImage(mountainImage, x1, y1, null);
         g2.drawImage(mountainImage, x2, y2, null);
-
     }
 
 }

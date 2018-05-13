@@ -15,9 +15,7 @@ import java.awt.image.BufferedImage;
 public class Animation {
     
     private long beginTime = 0;
-    
     private long mesure = 20;
-    
     private AFrameOnImage[] frames;
     private int numOfFrame = 0;
     private int currentFrame = 0;
@@ -42,8 +40,7 @@ public class Animation {
         for(int i = 0;i<numOfFrame;i++) frames[i] = bufferSprites[i];
         frames[numOfFrame] = sprite;
         numOfFrame++;
-    }
-    
+    }   
     public void paintAnims(int x, int y, BufferedImage image, Graphics2D g2, int anchor, float rotation){
         frames[currentFrame].paint(x, y, image, g2, anchor, rotation);
     }
