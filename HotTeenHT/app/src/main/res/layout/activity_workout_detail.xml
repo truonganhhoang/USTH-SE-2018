@@ -24,6 +24,7 @@
         android:layout_below="@id/textViewWorkoutName"
         android:text="SetupDetail"
         android:textSize="15dp"
+        android:textColor="@color/black"
          />
 
 
