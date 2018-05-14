@@ -1,0 +1,104 @@
+* Starting client
+* Connecting to master process on port 17638
+* Analyzing classpath: 
+  - C:/Users/Dell E6420/IdeaProjects/2048/target/classes
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\charsets.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\deploy.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\access-bridge-64.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\cldrdata.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\dnsns.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\jaccess.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\jfxrt.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\localedata.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\nashorn.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunec.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunjce_provider.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunmscapi.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\sunpkcs11.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext\zipfs.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\javaws.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\jce.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfr.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfxswt.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\jsse.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\management-agent.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\plugin.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\resources.jar
+  - C:\Program Files\Java\jdk1.8.0_171\jre\lib\rt.jar
+  - C:\Users\Dell E6420\IdeaProjects\2048\target\classes
+  - D:\IntelliJ IDEA Community Edition 2018.1.2\lib\junit-4.12.jar
+  - D:\IntelliJ IDEA Community Edition 2018.1.2\lib\hamcrest-core-1.3.jar
+* Finished analyzing classpath
+* Generating tests for class com.company.Tile
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Setting up search algorithm for whole suite generation
+* Loaded 35 tests from C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\evosuite-seeds\com.company.Tile.seed
+* Total number of test goals: 
+  - Line 78
+  - Branch 37
+  - Exception 0
+  - MutationFactory 184
+  - Output 13
+  - Method 13
+  - MethodNoException 13
+  - CBranchFitnessFactory 37
+* Using seed 1525798568467
+* Starting evolution
+[MASTER] 23:56:50.047 [pool-2-thread-1] WARN  TimeController - Phase INITIALIZATION lasted too long, 27 seconds more than allowed.
+* Search finished after 95s and 473 generations, 124149 statements, best individual has fitness: 2.0
+* Writing sequences to pool
+[MASTER] 23:58:58.187 [pool-2-thread-1] WARN  TimeController - Phase SEARCH lasted too long, 35 seconds more than allowed.
+[MASTER] 23:58:58.397 [pool-2-thread-1] WARN  TimeController - Current phase MINIMIZATION could run up to 14s, but only 7s are left
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 99%
+* Total number of goals: 78
+* Number of covered goals: 77
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 100%
+* Total number of goals: 37
+* Number of covered goals: 37
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 100%
+* Total number of goals: 184
+* Number of covered goals: 184
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 92%
+* Total number of goals: 13
+* Number of covered goals: 12
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 100%
+* Total number of goals: 37
+* Number of covered goals: 37
+* Generated 27 tests with total length 55
+* Resulting test suite's coverage: 99% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 23:59:02.963 [pool-2-thread-1] WARN  TimeController - Current phase ASSERTION_GENERATION could run up to 14s, but only 2s are left
+* Skipping assertion generation because not enough time is left
+* Compiling and checking tests
+[MASTER] 23:59:06.175 [pool-2-thread-1] WARN  TimeController - Current phase JUNIT_CHECK could run up to 14s, but only 0s are left
+[MASTER] 23:59:06.175 [pool-2-thread-1] WARN  TimeController - Current phase WRITING_TESTS could run up to 14s, but only 0s are left
+* Writing JUnit test case 'Tile_ESTest' to C:\Users\Dell E6420\IdeaProjects\2048\.evosuite\tmp_2018_05_08_23_55_58\tests
+* Done!
+
