@@ -1,0 +1,22 @@
+<?php
+//The first few lines is php code
+include_one("login.php");
+
+class LoginTest extends \PHPUnit_Framework_TestCase{
+	public function test_show_login(){
+		//next is pseudo code because I've not finished my php course
+		expect redirect('/manage/dashbroad') when userdata('isloggedin"); //using mock
+		//source: https://stackoverflow.com/questions/25214407/how-to-use-phpunit-to-test-a-method-that-calls-other-methods-of-the-same-class?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+		$mock = $this->getMockBuilder('\login')
+        	->setMethods(array('_construct')) //_construct from /manage/dashbroad
+        	->getMock();
+		$mock->expects($this->once())
+		->method('_construct');
+	}
+	//The rest should be the same
+	public function test_index(){
+		expect redirect() when $this->session->userdata('isLoggedIn')
+		expect show_login(FALSE) else;
+	}
+}
+
