@@ -9,7 +9,7 @@
 * First function: create a workout with different exercises
 * Uses Java
 
-##Specifications:
+## Specifications:
 * Train yourself everywhere with a huge number of different exercises
 * This app is perfect for beginners. And if you are at an intermediate level, it will help you take your skills to a higher level
 * Instruct you to work through your exercises with a precise timer

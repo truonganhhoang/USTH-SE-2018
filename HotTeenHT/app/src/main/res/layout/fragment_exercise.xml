@@ -15,6 +15,7 @@
         android:text="ADD EXERCISES" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewExerciseWithReps"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"

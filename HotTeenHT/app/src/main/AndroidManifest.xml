@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CustomWorkout"
             android:parentActivityName=".MainActivity">
@@ -24,23 +23,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.minhduc.fitnessapp.MainActivity" />
         </activity>
-
         <activity
             android:name=".NameYourWorkout"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
             android:parentActivityName=".CustomWorkout">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.minhduc.fitnessapp.CustomWorkout" />
         </activity>
-
         <activity
             android:name=".CreateNewWorkout"
-            android:label="@string/title_activity_create_new_workout"
-            android:parentActivityName=".NameYourWorkout">
+            android:launchMode="singleTop"
+            android:parentActivityName=".CustomWorkout">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minhduc.fitnessapp.NameYourWorkout" />
+                android:value="com.example.minhduc.fitnessapp.CustomWorkout" />
         </activity>
+        <activity android:name=".ChooseExercise" />
+        <activity android:name=".WorkoutDetail" />
+        <activity android:name=".Work" />
+        <activity android:name=".Rest" />
+        <activity android:name=".FinishWorkout"></activity>
     </application>
 
 </manifest>

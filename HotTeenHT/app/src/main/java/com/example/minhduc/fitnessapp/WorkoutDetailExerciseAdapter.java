@@ -5,16 +5,17 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHolder> {
+public class WorkoutDetailExerciseAdapter extends RecyclerView.Adapter<WorkoutDetailExerciseAdapter.ViewHolder> {
     private ArrayList<String> names;
+    private ArrayList<Integer> exerciseReps;
 
-    public WorkoutAdapter(ArrayList<String> names) {
+    public WorkoutDetailExerciseAdapter(ArrayList<String> names, ArrayList<Integer> exerciseReps) {
         this.names = names;
+        this.exerciseReps = exerciseReps;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -33,16 +34,18 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
 
     @NonNull
     @Override
-    public WorkoutAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public WorkoutDetailExerciseAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cv = (CardView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.single_workout_row, parent, false);
+                .inflate(R.layout.workout_detail_exercise, parent, false);
         return new ViewHolder(cv);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WorkoutDetailExerciseAdapter.ViewHolder holder, int position) {
         CardView cardView = holder.cardView;
-        TextView textView = cardView.findViewById(R.id.workoutNameTextView);
-        textView.setText(names.get(position));
+        TextView textName = cardView.findViewById(R.id.textViewExerciseName);
+        TextView textReps = cardView.findViewById(R.id.textViewExerciseReps);
+        textName.setText(names.get(position));
+        textReps.setText(exerciseReps.get(position) + " REPS");
     }
 }

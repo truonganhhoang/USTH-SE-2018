@@ -4,15 +4,18 @@ public class DbSchema {
     public static final class WorkoutTable {
         public static final String NAME = "Workout";
         public static final class Cols {
-            public static final String ID = "WorkoutId";
+            public static final String ID = "_id";
             public static final String NAME = "Name";
+            public static final String ROUNDS = "Rounds";
+            public static final String RESTEXERCISES = "RestExercises";
+            public static final String RESTROUNDS = "RestRounds";
         }
     }
 
     public static final class ExerciseTable {
         public static final String NAME = "Exercise";
         public static final class Cols {
-            public static final String ID = "ExerciseId";
+            public static final String ID = "_id";
             public static final String NAME = "Name";
         }
     }
