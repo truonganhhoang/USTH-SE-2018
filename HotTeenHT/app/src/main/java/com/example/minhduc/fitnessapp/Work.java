@@ -36,9 +36,8 @@ public class Work extends AppCompatActivity {
 
         final String exerciseDetail = (exerciseName + "\n" + exerciseRep + " reps").toUpperCase();
 
-        int delay = 1;
+        int delay = 6;
         new CountDownTimer(delay * 1000, 1000) {
-
             public void onTick(long millisUntilFinished) {
                 preparationTimer.setText(String.valueOf(millisUntilFinished / 1000));
             }
@@ -47,7 +46,6 @@ public class Work extends AppCompatActivity {
                 preparationTimer.setText(exerciseDetail);
                 buttonTapWhenDone.setVisibility(View.VISIBLE);
             }
-
         }.start();
     }
 
