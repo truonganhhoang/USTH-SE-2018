@@ -1,0 +1,18 @@
+[MASTER] 23:57:08.861 [TEST_EXECUTION_THREAD_0] ERROR FunctionalMockStatement - Cannot use Mockito on class java.awt.Graphics2D due to IAE: 
+Mockito cannot mock this class: class java.awt.Graphics2D.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 1.8
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 25.171-b11
+JVM name           : Java HotSpot(TM) 64-Bit Server VM
+JVM version        : 1.8.0_171-b11
+JVM info           : mixed mode
+OS name            : Windows 7
+OS version         : 6.1
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type

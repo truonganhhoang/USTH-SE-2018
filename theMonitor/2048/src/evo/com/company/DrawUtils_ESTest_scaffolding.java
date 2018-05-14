@@ -31,7 +31,7 @@ public class DrawUtils_ESTest_scaffolding {
     org.evosuite.runtime.RuntimeSettings.className = "com.company.DrawUtils"; 
     org.evosuite.runtime.GuiSupport.initialize(); 
     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
-    org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+    org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 1000;
     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
