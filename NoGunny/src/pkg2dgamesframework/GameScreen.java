@@ -18,13 +18,10 @@ import javax.swing.JFrame;
 public abstract class GameScreen extends JFrame implements KeyListener{
 
     public static int keyPressed = 0;
-    public static int keyReleased = 1;
-    
+    public static int keyReleased = 1; 
     public int  customWidth  = 500;
     public int  customHeight = 500;
-    
     private GameThread gThread;
-    
     public static int masterWidth = 500, masterHeight = 500;
     
     public GameScreen(){
@@ -33,7 +30,6 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     }
     
     public void RegisterImage(int id, BufferedImage image){
-        
     }
     
     public BufferedImage getImageWithID(int id){
@@ -41,25 +37,23 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     }
     
     public GameScreen(int w, int h){
-        this. customWidth  = w;
-        this. customHeight= h;
-        masterWidth =  customWidth ;
-        masterHeight =   customHeight;
+        this.customWidth  = w;
+        this.customHeight= h;
+        masterWidth = customWidth ;
+        masterHeight = customHeight;
         InitThread();
         InitScreen();
     }
     
     private void InitScreen(){
-        
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addKeyListener(this);
-        setSize(customWidth,   customHeight);
-        setVisible(true);
-        
+        setSize(customWidth,customHeight);
+        setVisible(true);  
     }
     
     public void beginGame(){
-        gThread.StartThread();
+        gThread.startThread();
     }
     
     private void InitThread(){
@@ -85,3 +79,4 @@ public abstract class GameScreen extends JFrame implements KeyListener{
     public abstract void keyAction(KeyEvent e, int Event);
     
 }
+
