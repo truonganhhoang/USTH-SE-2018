@@ -33,20 +33,22 @@ public class PlaneEnemy {
     public Enemy getEnemy(int i) {
         return enemysQueue.get(i);
     }
-    public PlaneEnemy() {
 
+    /**
+     * Constructor
+     */
+    public PlaneEnemy() {
         try {
             enemyImage = ImageIO.read(new File("Assets/Enemy2.png"));
         } catch (IOException ex) {
         }
         Enemy enemy;
         enemysQueue = new QueueList<Enemy>();
-       
-            int deltaY = getRandomY();
-            enemy = new Enemy(830 +  300, -350 + deltaY, 93, 64);
-            enemysQueue.push(enemy);
-            enemy = new Enemy(830 + 300, 200 + deltaY, 93, 64);
-            enemysQueue.push(enemy);
+        int deltaY = getRandomY();
+        enemy = new Enemy(830 + 300, -350 + deltaY, 93, 64);
+        enemysQueue.push(enemy);
+        enemy = new Enemy(830 + 300, 200 + deltaY, 93, 64);
+        enemysQueue.push(enemy);
     }
 
     public void resetEnemy() {
