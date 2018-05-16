@@ -70,4 +70,10 @@
     nbproject/build-impl.xml file. 
 
     -->
+	<dependency>
+	  <groupId>org.easymock</groupId>
+	  <artifactId>easymock</artifactId>
+	  <version>3.6</version>
+	  <scope>test</scope>
+	</dependency>
 </project>

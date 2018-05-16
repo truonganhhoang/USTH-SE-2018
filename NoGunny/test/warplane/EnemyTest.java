@@ -5,8 +5,7 @@
  */
 package warplane;
 
-import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
+import java.awt.Rectangle;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,67 +15,68 @@ import static org.junit.Assert.*;
  *
  * @author duanp
  */
-public class WarPlaneTest {
+public class EnemyTest {
     
-    public WarPlaneTest() {
+    public EnemyTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
     }
-         
+    
     @AfterClass
     public static void tearDownClass() {
     }
 
     /**
-     * Test of main method, of class WarPlane.
+     * Test of update method, of class Enemy.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        WarPlane.main(args);
+    public void testUpdate() throws Exception {
+        System.out.println("update");
+        Enemy instance = null;
+        instance.update();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of gameUpdate method, of class WarPlane.
+     * Test of getRectangle method, of class Enemy.
      */
     @Test
-    public void testGameUpdate() {
-        System.out.println("gameUpdate");
-        long deltaTime = 0L;
-        WarPlane instance = new WarPlane();
-        instance.gameUpdate(deltaTime);
+    public void testGetRectangle() {
+        System.out.println("getRectangle");
+        Enemy instance = null;
+        Rectangle expResult = null;
+        Rectangle result = instance.getRectangle();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of gamePaint method, of class WarPlane.
+     * Test of setBehindEnemy method, of class Enemy.
      */
     @Test
-    public void testGamePaint() {
-        System.out.println("gamePaint");
-        Graphics2D g2 = null;
-        WarPlane instance = new WarPlane();
-        instance.gamePaint(g2);
+    public void testSetBehindEnemy() {
+        System.out.println("setBehindEnemy");
+        boolean b = false;
+        Enemy instance = null;
+        instance.setBehindEnemy(b);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of keyAction method, of class WarPlane.
+     * Test of getBehindEnemy method, of class Enemy.
      */
     @Test
-    public void testKeyAction() {
-        System.out.println("keyAction");
-        KeyEvent e = null;
-        int Event = 0;
-        WarPlane instance = new WarPlane();
-        instance.keyAction(e, Event);
+    public void testGetBehindEnemy() {
+        System.out.println("getBehindEnemy");
+        Enemy instance = null;
+        boolean expResult = false;
+        boolean result = instance.getBehindEnemy();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

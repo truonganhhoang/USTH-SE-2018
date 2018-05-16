@@ -20,6 +20,9 @@ public class Mountain {
     private BufferedImage mountainImage;
     private int x1, x2;
     private final int y1, y2;
+     /**
+     * Constructor
+     */
     public Mountain() {
         try {
             mountainImage = ImageIO.read(new File("Assets/moutain.png"));

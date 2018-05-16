@@ -51,7 +51,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.RegisterImage(id, image);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -66,7 +66,7 @@ public class GameScreenTest {
         BufferedImage result = instance.getImageWithID(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.beginGame();
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.keyTyped(e);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.keyPressed(e);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -117,7 +117,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.keyReleased(e);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -130,7 +130,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.gameUpdate(deltaTime);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -143,7 +143,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.gamePaint(g2);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -157,7 +157,7 @@ public class GameScreenTest {
         GameScreen instance = new GameScreenImpl();
         instance.keyAction(e, Event);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     public class GameScreenImpl extends GameScreen {

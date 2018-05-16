@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="9" hostname="DESKTOP-87FITF1" name="pkg2dgamesframework.GameScreenTest" skipped="0" tests="9" time="0.377" timestamp="2018-05-13T17:21:56">
+<testsuite errors="1" failures="2" hostname="DESKTOP-87FITF1" name="warplane.GroundTest" skipped="0" tests="3" time="0.175" timestamp="2018-05-15T10:17:44">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javac.test.classpath" value=":build/classes:C:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
-    <property name="javac.includes" value="pkg2dgamesframework/GameScreenTest.java" />
+    <property name="javac.includes" value="warplane/GroundTest.java" />
     <property name="ant.core.lib" value="C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="user.dir" value="C:\git\USTH-SE-2018\NoGunny" />
@@ -27,7 +27,7 @@
     <property name="libs.hamcrest.classpath" value="C:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="os.name" value="Windows 10" />
-    <property name="test.class" value="pkg2dgamesframework.GameScreenTest" />
+    <property name="test.class" value="warplane.GroundTest" />
     <property name="libs.beans-binding.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\beansbinding-1.2.1.jar" />
     <property name="ap.proc.none.internal" value="" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="duanp" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner pkg2dgamesframework.GameScreenTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\git\USTH-SE-2018\NoGunny\build\test\results\TEST-pkg2dgamesframework.GameScreenTest.xml crashfile=C:\git\USTH-SE-2018\NoGunny\build\junitvmwatcher6978695117031077829.properties propsfile=C:\git\USTH-SE-2018\NoGunny\build\junit8139165220026582984.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner warplane.GroundTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\git\USTH-SE-2018\NoGunny\build\test\results\TEST-warplane.GroundTest.xml crashfile=C:\git\USTH-SE-2018\NoGunny\build\junitvmwatcher1972106766176818452.properties propsfile=C:\git\USTH-SE-2018\NoGunny\build\junit2310687671174603513.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -61,7 +61,7 @@
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="build.compiler.emacs" value="true" />
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_161\jre\lib\endorsed" />
-    <property name="test.includes" value="pkg2dgamesframework/GameScreenTest.java" />
+    <property name="test.includes" value="warplane/GroundTest.java" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans 8.2\platform\core\asm-all-5.0.1.jar;C:\Program Files\NetBeans 8.2\platform\core\core-base.jar;C:\Program Files\NetBeans 8.2\platform\core\core.jar;C:\Program Files\NetBeans 8.2\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Program Files\NetBeans 8.2\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ja.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_pt_BR.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ru.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_zh_CN.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="java.vm.specification.version" value="1.8" />
     <property name="libs.hibernate4-support.src" value="" />
@@ -74,7 +74,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\git\USTH-SE-2018\NoGunny\null253971623" />
+    <property name="javac.includesfile.binary" value="C:\git\USTH-SE-2018\NoGunny\null1179164412" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value=":build/classes:C:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -86,7 +86,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="C:\Program Files\NetBeans 8.2\ide\docs\jaxb-api-doc.zip" />
-    <property name="javac.includes.binary" value="C:\git\USTH-SE-2018\NoGunny\build\test\classes\pkg2dgamesframework\GameScreenTest.class" />
+    <property name="javac.includes.binary" value="C:\git\USTH-SE-2018\NoGunny\build\test\classes\warplane\GroundTest.class" />
     <property name="ant.home" value="C:\Program Files\NetBeans 8.2\extide\ant" />
     <property name="libs.junit_4.src" value="C:\Program Files\NetBeans 8.2\platform\docs\junit-4.12-sources.jar" />
     <property name="libs.testng.classpath" value="C:\Program Files\NetBeans 8.2\platform\modules\ext\testng-6.8.1-dist.jar" />
@@ -317,60 +317,25 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testKeyAction" time="0.186">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testKeyAction(GameScreenTest.java:160)
+  <testcase classname="warplane.GroundTest" name="testGetYGround" time="0.099">
+    <failure message="expected:&lt;0&gt; but was:&lt;470&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;0&gt; but was:&lt;470&gt;
+	at warplane.GroundTest.testGetYGround(GroundTest.java:65)
 </failure>
   </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testKeyPressed" time="0.014">
+  <testcase classname="warplane.GroundTest" name="testPaint" time="0.011">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at warplane.Ground.Paint(Ground.java:50)
+	at warplane.GroundTest.testPaint(GroundTest.java:51)
+</error>
+  </testcase>
+  <testcase classname="warplane.GroundTest" name="testUpdate" time="0.007">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testKeyPressed(GameScreenTest.java:107)
+	at warplane.GroundTest.testUpdate(GroundTest.java:40)
 </failure>
   </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testBeginGame" time="0.014">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testBeginGame(GameScreenTest.java:81)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testGameUpdate" time="0.02">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testGameUpdate(GameScreenTest.java:133)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testGetImageWithID" time="0.012">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testGetImageWithID(GameScreenTest.java:69)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testRegisterImage" time="0.014">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testRegisterImage(GameScreenTest.java:54)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testKeyTyped" time="0.017">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testKeyTyped(GameScreenTest.java:94)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testGamePaint" time="0.014">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testGamePaint(GameScreenTest.java:146)
-</failure>
-  </testcase>
-  <testcase classname="pkg2dgamesframework.GameScreenTest" name="testKeyReleased" time="0.013">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at pkg2dgamesframework.GameScreenTest.testKeyReleased(GameScreenTest.java:120)
-</failure>
-  </testcase>
-  <system-out><![CDATA[keyAction
-keyPressed
-beginGame
-gameUpdate
-getImageWithID
-RegisterImage
-keyTyped
-gamePaint
-keyReleased
+  <system-out><![CDATA[getYGround
+Paint
+update
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
