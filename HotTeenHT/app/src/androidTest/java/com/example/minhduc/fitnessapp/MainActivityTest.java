@@ -70,7 +70,7 @@ public class MainActivityTest {
         onView(withText(name2)).check(ViewAssertions.doesNotExist());
     }
     @Test
-    public void test(){
+    public void testNameConstraint(){
         // Click the lets go button
         onView(withId(R.id.customWorkoutButton)).perform(click());
         // Click the add button
