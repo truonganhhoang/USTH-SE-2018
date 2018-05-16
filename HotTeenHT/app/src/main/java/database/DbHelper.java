@@ -6,11 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.example.minhduc.fitnessapp.WorkoutDetail;
-
-import java.util.ArrayList;
-
 import database.DbSchema.ExerciseTable;
 import database.DbSchema.RelationshipTable;
 import database.DbSchema.WorkoutTable;
