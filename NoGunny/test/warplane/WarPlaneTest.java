@@ -38,7 +38,7 @@ public class WarPlaneTest {
         String[] args = null;
         WarPlane.main(args);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -51,7 +51,7 @@ public class WarPlaneTest {
         WarPlane instance = new WarPlane();
         instance.gameUpdate(deltaTime);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class WarPlaneTest {
         WarPlane instance = new WarPlane();
         instance.gamePaint(g2);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class WarPlaneTest {
         WarPlane instance = new WarPlane();
         instance.keyAction(e, Event);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
