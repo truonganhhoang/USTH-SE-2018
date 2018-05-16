@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class AnimationView implements GameView{
+public class AnimationView implements GameView {
     public int sizeX = 60, sizeY = 60;
     public long firstImage = 0;
     public BufferedImage spriteSheetImage;
@@ -36,17 +36,17 @@ public class AnimationView implements GameView{
 
         nImage = n;
         currentImage = 0;
-        for (int i=0;i<n;i++) sheet[i] = spriteSheetImage.getSubimage(i*sizeX,0,sizeX,sizeY);
+        for (int i = 0; i < n; i++) sheet[i] = spriteSheetImage.getSubimage(i * sizeX, 0, sizeX, sizeY);
     }
 
+    // cycle through image sheet
     public void drawImage(Graphics g, GameObject go) {
-        System.out.println("cur = " + currentImage);
         currentImage %= nImage;
-        g.drawImage(sheet[currentImage],go.getCornerX(),go.getCornerY(),go.getWidth(),go.getHeight(),null);
+        g.drawImage(sheet[currentImage], go.getCornerX(), go.getCornerY(), go.getWidth(), go.getHeight(), null);
     }
 
     public void drawImage(Graphics g, GameObject go, boolean stayingStillAlwaysTrue) {
-        g.drawImage(sheet[0],go.getCornerX(),go.getCornerY(),go.getWidth(),go.getHeight(),null);
+        g.drawImage(sheet[0], go.getCornerX(), go.getCornerY(), go.getWidth(), go.getHeight(), null);
     }
 
     public void run() {

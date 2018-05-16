@@ -8,10 +8,10 @@ public enum MoveType {
     STAY;
 
     public static String fileNameOf(MoveType moveType) {
-        if (moveType==UP) return "up";
-        if (moveType==DOWN) return "down";
-        if (moveType==LEFT) return "left";
-        if (moveType==RIGHT) return "right";
+        if (moveType == UP) return "up";
+        if (moveType == DOWN) return "down";
+        if (moveType == LEFT) return "left";
+        if (moveType == RIGHT) return "right";
         return "stay";
     }
 }

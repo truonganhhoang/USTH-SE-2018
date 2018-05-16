@@ -10,14 +10,16 @@ public class LevelManager {
     private int currentLevel = 1;
     public static final int MAX_LEVEL = 50;
 
-    public LevelManager() {
+    private LevelManager() {
         currentLevel = 0;
     }
 
+    // clear everything to create a new level
     private void newLevel() {
         ControllerController.instance.init();
-        for (int i=0;i<30;i++)
-            for (int j=0;j<30;j++) GameMap.getInstance().wallDown[i][j] = GameMap.getInstance().wallRight[i][j] = false;
+        for (int i = 0; i < 30; i++)
+            for (int j = 0; j < 30; j++)
+                GameMap.getInstance().wallDown[i][j] = GameMap.getInstance().wallRight[i][j] = false;
     }
 
     private void nextLevel() {
@@ -25,14 +27,15 @@ public class LevelManager {
     }
 
     public void run() {
-        if (currentLevel==0) {
+        if (currentLevel == 0) {
             currentLevel = 1;
             newLevel();
             GameLevel.getInstance().createLevel(1);
         }
 
         if (GameLevel.getInstance().hasWon()) {
-            newLevel(); nextLevel();
+            newLevel();
+            nextLevel();
             GameLevel.getInstance().createLevel(currentLevel);
         }
 
@@ -43,8 +46,9 @@ public class LevelManager {
     }
 
     private static LevelManager instance;
+
     public static LevelManager getInstance() {
-        if (instance==null) instance = new LevelManager();
+        if (instance == null) instance = new LevelManager();
         return instance;
     }
 

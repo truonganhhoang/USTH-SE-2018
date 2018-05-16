@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class ControllerController {
 
+    // This class is used to group all controllers in one place to execute.
+    // It helps we control what game logic segment or rendering segment we want to execute first.
     private ControllerController() {
 
     }

@@ -1,6 +1,6 @@
 package controllers.movement;
 
-public class MoveStay {
+public class MoveStay extends Move {
 
     public void move() {
 

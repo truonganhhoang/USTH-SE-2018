@@ -8,12 +8,13 @@ import views.GameView;
 import java.awt.*;
 
 public abstract class SingleController {
+    // this class is the base class for unit controllers.
     GameObject gameObject;
     GameView gameView;
 
-    public static final int[] dx = {0,0,0,1,-1,-1,1,-1,1};
-    public static final int[] dy = {0,1,-1,0,0,-1,-1,1,1};
-    public static final MoveType[] moveTypes = {MoveType.STAY,MoveType.DOWN,MoveType.UP,MoveType.RIGHT,MoveType.LEFT};
+    public static final int[] dx = {0, 0, 0, 1, -1, -1, 1, -1, 1};
+    public static final int[] dy = {0, 1, -1, 0, 0, -1, -1, 1, 1};
+    public static final MoveType[] moveTypes = {MoveType.STAY, MoveType.DOWN, MoveType.UP, MoveType.RIGHT, MoveType.LEFT};
     protected MoveType moveType;
 
     public boolean isMoving = false;
@@ -30,41 +31,57 @@ public abstract class SingleController {
         gameView = gv;
     }
 
+    // initialize the unit information
     public void init() {
 
     }
 
+    // check if the current action of the unit is finished
     public boolean finished() {
         return !isMoving && !isFighting;
     }
 
+    // check if the unit is alive or not. If not, it can be deleted to save resources
     public boolean deleteNow() {
         return (!gameObject.isAlive());
     }
 
+    // render the unit on graphics
     public void draw(Graphics g) {
-        gameView.drawImage(g,gameObject);
+        gameView.drawImage(g, gameObject);
     }
 
+    // order the unit to perform action
     public void run() {
 
     }
 
 
-
     //********************* GETTER AND SETTER
     //**********  GETTER  ******************************************************************
-    public GameObject getGameObject() {return gameObject;}
+    public GameObject getGameObject() {
+        return gameObject;
+    }
 
-    public GameView getGameView() {return gameView;}
+    public GameView getGameView() {
+        return gameView;
+    }
 
-    public int getX() {return gameObject.getX();}
+    public int getX() {
+        return gameObject.getX();
+    }
 
-    public int getY() {return gameObject.getY();}
+    public int getY() {
+        return gameObject.getY();
+    }
 
-    public int getCornerX() {return gameObject.getCornerX();}
+    public int getCornerX() {
+        return gameObject.getCornerX();
+    }
 
-    public int getCornerY() {return gameObject.getCornerY();}
+    public int getCornerY() {
+        return gameObject.getCornerY();
+    }
 
     public int getRow() {
         return gameObject.getRow();
@@ -92,9 +109,13 @@ public abstract class SingleController {
 
 
     //**********  SETTER ******************************************************************
-    public void setX(int v) {gameObject.setX(v);}
+    public void setX(int v) {
+        gameObject.setX(v);
+    }
 
-    public void setY(int v) {gameObject.setY(v);}
+    public void setY(int v) {
+        gameObject.setY(v);
+    }
 
     public void setWidth(int width) {
         gameObject.setWidth(width);
@@ -112,7 +133,11 @@ public abstract class SingleController {
         gameObject.setColumn(column);
     }
 
-    public void setHealth(int v) {gameObject.setHealth(v);}
+    public void setHealth(int v) {
+        gameObject.setHealth(v);
+    }
 
-    public void setIsAlive(boolean v) {gameObject.setIsAlive(v);}
+    public void setIsAlive(boolean v) {
+        gameObject.setIsAlive(v);
+    }
 }

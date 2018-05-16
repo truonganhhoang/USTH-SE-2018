@@ -6,6 +6,7 @@ import models.Wall;
 import views.ImageView;
 
 public class WallController extends SingleController {
+    // control a single unit Wall
     private WallType wallType;
 
     public void checkDefault() {
@@ -14,7 +15,7 @@ public class WallController extends SingleController {
         if (this.wallType == WallType.DOWN) {
             setWidth(GameConfig.TILE_LENGTH);
             setHeight(GameConfig.WALL_DOWN_HEIGHT);
-            setX(tileLength * getColumn() - tileLength/2);
+            setX(tileLength * getColumn() - tileLength / 2);
             setY(tileLength * getRow());
         }
 
@@ -22,7 +23,7 @@ public class WallController extends SingleController {
             setWidth(GameConfig.WALL_RIGHT_WIDTH);
             setHeight(GameConfig.TILE_LENGTH);
             setX(tileLength * getColumn());
-            setY(tileLength * getRow() - tileLength/2);
+            setY(tileLength * getRow() - tileLength / 2);
         }
     }
 
@@ -39,8 +40,8 @@ public class WallController extends SingleController {
         checkDefault();
     }
 
-    public static WallController create(int column,int row, WallType wallType) {
-        return new WallController(column,row,wallType);
+    public static WallController create(int column, int row, WallType wallType) {
+        return new WallController(column, row, wallType);
     }
 
     public void run() {

@@ -8,14 +8,16 @@ public class GameMap {
     int MAP_TILE_SIZE; // số lượng ô vuông trên bản đồ
     int MAP_SIZE = 360; // bản đồ chơi kích thước 360x360
     int TILE_LENGTH = 60;
-    public boolean[][] wallDown = new boolean[30][30];
+    public boolean[][] wallDown = new boolean[30][30]; // wallDown[i][j] = true if there's a wall with down direction at square (i,j)
     public boolean[][] wallRight = new boolean[30][30];
     public int exitX = 0, exitY = 0;
     public boolean playerTurn = true;
 
     public static Image mapBackground;
 
-    private GameMap() {init(); }
+    private GameMap() {
+        init();
+    }
 
     public void getMapInfo() {
         MAP_TILE_SIZE = 6;
@@ -28,13 +30,13 @@ public class GameMap {
     }
 
     public void draw(Graphics g) {
-        g.drawImage(mapBackground,0,0,MAP_SIZE,MAP_SIZE,null);
+        g.drawImage(mapBackground, 0, 0, MAP_SIZE, MAP_SIZE, null);
     }
 
     private static GameMap instance;
 
     public static GameMap getInstance() {
-        if (instance==null) instance = new GameMap();
+        if (instance == null) instance = new GameMap();
         return instance;
     }
 

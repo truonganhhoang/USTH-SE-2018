@@ -24,7 +24,7 @@ public class ControllerManager {
 
     public void add(SingleController singleController) {
         singleControllers.add(singleController);
-        if (singleController instanceof Colliable) CollisionManager.getInstance().add((Colliable)singleController);
+        if (singleController instanceof Colliable) CollisionManager.getInstance().add((Colliable) singleController);
     }
 
     public void remove(SingleController sc) {
@@ -43,13 +43,13 @@ public class ControllerManager {
         singleControllers.clear();
     }
 
-
+    // draw all unit onto the Graphics g
     public void draw(Graphics g) {
         for (SingleController singleController : singleControllers)
             singleController.draw(g);
     }
 
-    //Sau mỗi lần run sẽ kiểm tra xem xóa phần tử đc chưa, nếu đc thì xóa
+    // After each update run, it checks if any element can be deleted, if it exists then delete it
     public void run() {
         for (SingleController singleController : singleControllers)
             singleController.run();

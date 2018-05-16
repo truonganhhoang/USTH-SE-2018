@@ -8,6 +8,7 @@ public class EnemyControllerManager extends ControllerManager {
     private EnemyControllerManager() {
         super();
     }
+
     private boolean inited = false;
 
     private boolean finished() {
@@ -17,7 +18,7 @@ public class EnemyControllerManager extends ControllerManager {
     }
 
     public void run() {
-        if (!PlayerController.instance.finished()) return;
+        if (!PlayerController.getInstance().finished()) return;
         if (!inited) {
             for (SingleController singleController : singleControllers)
                 singleController.init();
@@ -35,8 +36,9 @@ public class EnemyControllerManager extends ControllerManager {
     }
 
     private static EnemyControllerManager instance;
+
     public static EnemyControllerManager getInstance() {
-        if (instance==null) instance = new EnemyControllerManager();
+        if (instance == null) instance = new EnemyControllerManager();
         return instance;
     }
 

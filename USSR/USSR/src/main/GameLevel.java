@@ -12,14 +12,14 @@ import java.util.Scanner;
 
 public class GameLevel {
     protected int MAP_TILE_SIZE = 6;
-    protected Point[] wallDownPosition;
+    protected Point[] wallDownPosition; // list of down-direction wall
     protected boolean[][] wallDown;
-    protected Point[] wallRightPosition;
+    protected Point[] wallRightPosition; // list of right-direction wall
     protected boolean[][] wallRight;
     protected Image[][] backgroundTile;
     protected EnemyController[] mummyControllers = new EnemyController[20];
-    public static final int[] dx = {0,0,0,1,-1,-1,1,-1,1};
-    public static final int[] dy = {0,1,-1,0,0,-1,-1,1,1};
+    public static final int[] dx = {0, 0, 0, 1, -1, -1, 1, -1, 1};
+    public static final int[] dy = {0, 1, -1, 0, 0, -1, -1, 1, 1};
 
     private int exitX = -124443, exitY = 123123;
     private Scanner input;
@@ -40,13 +40,13 @@ public class GameLevel {
     }
 
     private void createPlayer() {
-        int x,y;
+        int x, y;
         x = input.nextInt();
         y = input.nextInt();
-        PlayerController.instance.setColumn(x);
-        PlayerController.instance.setRow(y);
-        PlayerController.instance.setIsAlive(true);
-        PlayerController.instance.setHealth(1);
+        PlayerController.getInstance().setColumn(x);
+        PlayerController.getInstance().setRow(y);
+        PlayerController.getInstance().setIsAlive(true);
+        PlayerController.getInstance().setHealth(1);
         GameMap.getInstance().playerTurn = true;
     }
 
@@ -58,31 +58,31 @@ public class GameLevel {
         GameMap.getInstance().exitX = exitX;
         GameMap.getInstance().exitY = exitY;
 
-        int x = 0,y = 0;
-        if (exitY==0) x = 0*55 + 1;
-        if (exitX== MAP_TILE_SIZE +1) x = 1*55 + 2;
-        if (exitY== MAP_TILE_SIZE +1) x = 2*55 + 3;
-        if (exitX==0) x = 3*55 + 4;
+        int x = 0, y = 0;
+        if (exitY == 0) x = 0 * 55 + 1;
+        if (exitX == MAP_TILE_SIZE + 1) x = 1 * 55 + 2;
+        if (exitY == MAP_TILE_SIZE + 1) x = 2 * 55 + 3;
+        if (exitX == 0) x = 3 * 55 + 4;
 
         BufferedImage exitSprite = Utils.getImage("stairs6.gif");
-        PlayGameScreen.exitImage = exitSprite.getSubimage(x,y,55,55);
+        PlayGameScreen.exitImage = exitSprite.getSubimage(x, y, 55, 55);
     }
 
     private void createWallDown() {
         int n, column, row;
 
         n = input.nextInt();
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             column = input.nextInt();
             row = input.nextInt();
-            wallDownPosition[i] = new Point(column,row);
+            wallDownPosition[i] = new Point(column, row);
         }
 
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             int x = wallDownPosition[i].x;
             int y = wallDownPosition[i].y;
             wallDown[x][y] = true;
-            WallControllerManager.getInstance().add(WallController.create(x,y, WallType.DOWN));
+            WallControllerManager.getInstance().add(WallController.create(x, y, WallType.DOWN));
         }
     }
 
@@ -90,17 +90,17 @@ public class GameLevel {
         int n, column, row;
 
         n = input.nextInt();
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             column = input.nextInt();
             row = input.nextInt();
-            wallRightPosition[i] = new Point(column,row);
+            wallRightPosition[i] = new Point(column, row);
         }
 
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             int x = wallRightPosition[i].x;
             int y = wallRightPosition[i].y;
             wallRight[x][y] = true;
-            WallControllerManager.getInstance().add(WallController.create(x,y, WallType.RIGHT));
+            WallControllerManager.getInstance().add(WallController.create(x, y, WallType.RIGHT));
         }
     }
 
@@ -109,19 +109,19 @@ public class GameLevel {
         String type;
 
         n = input.nextInt();
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             x = input.nextInt();
             y = input.nextInt();
             type = input.next();
-            if (MummyType.valueOf(type)==MummyType.WHITE)
-                mummyControllers[i] = EnemyControllerWhite.create(x,y);
-            if (MummyType.valueOf(type)==MummyType.RED)
-                mummyControllers[i] = EnemyControllerRed.create(x,y);
-            if (MummyType.valueOf(type)==MummyType.SCORPION)
-                mummyControllers[i] = EnemyControllerScorpion.create(x,y);
+            if (MummyType.valueOf(type) == MummyType.WHITE)
+                mummyControllers[i] = EnemyControllerWhite.create(x, y);
+            if (MummyType.valueOf(type) == MummyType.RED)
+                mummyControllers[i] = EnemyControllerRed.create(x, y);
+            if (MummyType.valueOf(type) == MummyType.SCORPION)
+                mummyControllers[i] = EnemyControllerScorpion.create(x, y);
         }
 
-        for (int i=1;i<=n;i++) {
+        for (int i = 1; i <= n; i++) {
             EnemyController mummy = mummyControllers[i];
             mummy.setColumn(mummy.getColumn());
             mummy.setRow(mummy.getRow());
@@ -146,18 +146,19 @@ public class GameLevel {
     }
 
     public boolean hasLose() {
-        return PlayerController.instance.getHealth() <= 0;
+        return PlayerController.getInstance().getHealth() <= 0;
     }
 
     public boolean hasWon() {
-        if (PlayerController.instance.getColumn() == PlayGameScreen.exitX &&
-                PlayerController.instance.getRow() == PlayGameScreen.exitY) return true;
+        if (PlayerController.getInstance().getColumn() == PlayGameScreen.exitX &&
+                PlayerController.getInstance().getRow() == PlayGameScreen.exitY) return true;
         return false;
     }
 
     private static GameLevel instance;
+
     public static GameLevel getInstance() {
-        if (instance==null) instance = new GameLevel();
+        if (instance == null) instance = new GameLevel();
         return instance;
     }
 }

@@ -6,8 +6,8 @@ public class Player extends GameObject {
 
     }
 
-    public Player(int column,int row) {
-        super(column,row);
+    public Player(int column, int row) {
+        super(column, row);
     }
 
 }

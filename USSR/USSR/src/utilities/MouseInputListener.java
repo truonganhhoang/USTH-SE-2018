@@ -7,6 +7,7 @@ import java.awt.event.MouseMotionListener;
 public class MouseInputListener implements MouseListener, MouseMotionListener {
     private MouseInput mouseInput;
 
+    // Will be used later
     public MouseInputListener(MouseInput mi) {
         mouseInput = mi;
     }
