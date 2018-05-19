@@ -12,3 +12,5 @@ Team Protoss:
 - Framework: Gradle and Maven
   Technology: we use java as the programming language and android studio to build the app
 
+
+link to documentation: https://1drv.ms/w/s!Aoa2IxrLFbRJj22W1xjO56bijZQK
