@@ -8,3 +8,4 @@ members:
 inpired by app : 2048 (https://play.google.com/store/apps/details?id=com.ketchapp.play2048)
 First function used : The random numbers that appeared at the beginning of the game
 Framework: node.js . Used javascript
+Documentations: https://drive.google.com/drive/folders/1oeypT1x4o2yq024SoU_72lHva3kfx2J1
