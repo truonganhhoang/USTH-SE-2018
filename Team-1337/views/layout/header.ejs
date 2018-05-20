@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %> - The 1337er</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <% if (typeof(styles) !== 'undefined') styles.forEach(function (style) { %>
+      <%- `<link href="/stylecheets/${style}.css" rel="stylesheet">` %>
+    <% }); %>
+    <style>
+    </style>
+
+  </head>
+
+  <body>

@@ -1,0 +1,34 @@
+<div class="masthead">
+  <div class="container">
+    <nav class="site-nav">
+      <% if (typeof active !== 'undefined' && active === 'home') { %>
+        <a class="site-nav-item active" href="/">Home</a>
+      <% } else { %>
+        <a class="site-nav-item" href="/">Home</a>
+      <% } %>
+
+      <% if (!userId && typeof active !== 'undefined' && active === 'login') { %>
+        <a class="site-nav-item active" href="/login">Login</a>
+      <% } else if (!userId) { %>
+      <a class="site-nav-item" href="/login">Login</a>
+      <% } %>
+
+      <% if (!userId && typeof active !== 'undefined' && active === 'signup') { %>
+        <a class="site-nav-item active" href="/signup">Sign up</a>
+      <% } else if (!userId) { %>
+      <a class="site-nav-item" href="/signup">Sign up</a>
+      <% } %>
+
+      <% if (userId && typeof active !== 'undefined' && active === 'user') { %>
+        <a class="site-nav-item active" href="/user/<%= me.username %>"><%= me.fullName %></a>
+      <% } else if (userId) { %>
+      <a class="site-nav-item" href="/user/<%= me.username %>"><%= me.fullName %></a>
+      <% } %>
+
+      <% if (userId) { %>
+        <a class="site-nav-item" href="/Logout">Logout</a>
+      <% } %>
+
+    </nav>
+  </div>
+</div>
