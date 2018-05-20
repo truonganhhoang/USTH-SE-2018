@@ -86,7 +86,7 @@ public class WarPlane extends GameScreen {
 
     public static void main(String[] args) {
         new WarPlane();  
-        JUnitCore.runClasses(TestPrimer.class);
+        //JUnitCore.runClasses(TestPrimer.class);
     
     }
 
@@ -205,8 +205,8 @@ public class WarPlane extends GameScreen {
             g2.setColor(Color.RED);
             g2.setFont(myFont);
             g2.drawString("Press space to turn back begin screen", 250, 320);
-            g2.drawString(" YOUR SCORE:" + score, 300, 280);
-            g2.drawString(" HIGHSCORE:" + highScore, 300, 300);
+            g2.drawString(" YOUR SCORE: " + score, 300, 280);
+            g2.drawString(" HIGHSCORE  : " + highScore, 300, 300);
             g2.setColor(Color.RED);
             g2.setFont(myFont2);
             g2.drawString("---You Died---", 260, 240);

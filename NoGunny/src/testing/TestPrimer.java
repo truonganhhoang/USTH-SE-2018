@@ -10,8 +10,8 @@ import warplane.WarPlane;
 @Suite.SuiteClasses({
 	GroundTest.class,
 	PlaneEnemyTest.class,
-	Plane.class,
-	WarPlane.class,
+	PlaneTest.class,
+	WarPlaneTest.class,
 	EnemyTest.class,
 	MountainTest.class,
 	
