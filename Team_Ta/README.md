@@ -6,10 +6,11 @@ Group members:
 3. Vu xuan Huy - BI7-084
 4. Nguyen Minh Duc - BI7-038
 
-Inspired App: FoodyPOS
+Inspired App: T-Rex Rush
 
-Programming language: JAVA
+Programming language: Python
 
-First Function: 
-- User log-in
-- Order Drink
+First Function: https://drive.google.com/drive/folders/1bNsjVDSYnxPKbnvVdhez3xYsKSj5aY-f
+
+Documents: https://docs.google.com/document/d/1FDMdcpuIhraDKidSuzopCSRcPUufgxjvmBfVTW-VAiI/edit?usp=sharing
+
