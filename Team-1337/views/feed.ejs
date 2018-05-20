@@ -1,0 +1,55 @@
+<%- include('layout/header'); %>
+<%- include('layout/navbar'); %>
+<%- include('layout/site-header'); %>
+
+<div class="container">
+
+  <div class="row">
+
+
+    <%- include('layout/profile'); %>
+
+    <div class="col-md-5">
+
+      <%- include('layout/personalnav', { active: 'post'}); %>
+      <%- include('layout/alert'); %>
+
+      <% if (!posts.length) { %>
+        <div class="well">There seems to be nothing here yet... Maybe you want to <a href="/add">make a post</a>?</div>
+      <% } else { %>
+        <% posts.forEach(function (post) { %>
+          <div class="post list-group">
+            <div class="list-group-item">
+              <%- `<h3 class="post-title"><a href="/user/${post.author.username}">${post.author.fullName}</a></h3>` %>
+              <%- `<p class="post-meta">${moment(post.createdAt).fromNow()}</p>` %>
+
+              <% if (post.type === 'code') { %>
+                <pre><%= post.body %></pre>
+              <% } else { %>
+                <% if (post.body.length <= 30) { %>
+                  <h3><strong><%- escapeBody(post.body) %></strong></h3>
+                <% } else if (post.body.length <= 75) { %>
+                <h3><%- escapeBody(post.body) %></h3>
+              <% } else { %>
+                <h4><%- escapeBody(post.body) %></h4>
+              <% } %>
+        <% } %>
+
+        <% if (post.link) { %>
+          <p><span class="glyphicon glyphicon-link"></span> <a target="_blank" href="<%= post.link %>"><%= post.link %></a></p>
+        <% } %>
+
+            </div>
+          </div>
+      <% }); %>
+      <% } %>
+
+    </div> <!-- site-main -->
+
+    <%- include('layout/sidebar'); %>
+
+  </div>
+
+</div>
+
+<%- include('layout/footer'); %>

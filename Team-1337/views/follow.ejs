@@ -1,0 +1,47 @@
+<%- include('layout/header'); %>
+<%- include('layout/navbar'); %>
+<%- include('layout/site-header'); %>
+
+<div class="container">
+
+  <div class="row">
+
+
+    <%- include('layout/profile'); %>
+
+    <div class="col-md-5">
+
+      <%- include('layout/personalnav', { active: 'follow'}); %>
+      <%- include('layout/alert'); %>
+
+      <% if (!followers.length) { %>
+
+        <div class="well">
+          There seems to be no fans here yet... Maybe you want to <a href="#" onclick="document.getElementById('follow-button').click();">become a follower</a>?
+        </div>
+
+      <% } else { %>
+
+        <div>
+          <div class="list-group">
+            <div class="list-group-item follow-labels">
+              <h4>Users who look up to <a href="/user/<%= user.username %>"><%= user.fullName %></a></h4>
+              <% followers.forEach(function (follower) { %>
+                <a class="label label-default" href="/user/<%= follower.username %>"><%= follower.fullName %></a>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+
+     <% } %>
+
+
+    </div>
+
+    <%- include('layout/sidebar'); %>
+
+  </div>
+
+</div>
+
+<%- include('layout/footer'); %>
