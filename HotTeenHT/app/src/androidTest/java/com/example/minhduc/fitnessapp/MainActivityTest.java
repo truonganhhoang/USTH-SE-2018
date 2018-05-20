@@ -1,36 +1,33 @@
 package com.example.minhduc.fitnessapp;
 
 import android.support.test.espresso.assertion.ViewAssertions;
-import android.support.test.espresso.matcher.ViewMatchers;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-
-import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.longClick;
-import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.replaceText;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.swipeUp;
-import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-import static java.util.regex.Pattern.matches;
-import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.core.StringEndsWith.endsWith;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
-    @Rule public final ActivityRule<MainActivity> main = new ActivityRule<>(MainActivity.class);
+    @Rule
+    public ActivityTestRule<MainActivity> activityTestRule =
+            new ActivityTestRule<>(MainActivity.class);
 
     @Test
     public void ShouldBeAbleToLaunchMainScreen(){
@@ -71,5 +68,18 @@ public class MainActivityTest {
         onView(withText("OK")).perform(click());
         // Check if its not appear on menu
         onView(withText(name2)).check(ViewAssertions.doesNotExist());
+    }
+    @Test
+    public void testNameConstraint(){
+        // Click the lets go button
+        onView(withId(R.id.customWorkoutButton)).perform(click());
+        // Click the add button
+        onView(withId(R.id.addWorkoutButton)).perform(click());
+        // Save the exercise
+        onView(withId(R.id.confirmWorkoutNameButton)).perform((click()));
+        MainActivity activity = activityTestRule.getActivity();
+        onView(withText("Please enter a name")).
+                inRoot(withDecorView(not(is(activity.getWindow().getDecorView())))).
+                check(matches(isDisplayed()));
     }
 }

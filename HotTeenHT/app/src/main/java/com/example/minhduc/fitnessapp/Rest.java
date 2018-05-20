@@ -1,8 +1,9 @@
 package com.example.minhduc.fitnessapp;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,8 +51,7 @@ public class Rest extends AppCompatActivity {
         buttonQuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setResult(Activity.RESULT_CANCELED);
-                finish();
+                createQuitConfirmDialog();
             }
         });
 
@@ -66,6 +66,27 @@ public class Rest extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        // Do nothing
+        createQuitConfirmDialog();
+    }
+
+    private void createQuitConfirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to quit?")
+                .setTitle("Quit training");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                setResult(Activity.RESULT_CANCELED);
+                finish();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

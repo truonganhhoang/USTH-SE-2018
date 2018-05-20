@@ -12,9 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import java.util.ArrayList;
 
-import database.DbHelper;
-
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the

@@ -1,6 +1,5 @@
 package com.example.minhduc.fitnessapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,10 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import database.DbHelper;
 
 public class CreateNewWorkout extends AppCompatActivity {
@@ -130,7 +126,7 @@ public class CreateNewWorkout extends AppCompatActivity {
         int restExercises = setupFragment.getRestExercises();
         int restRounds = setupFragment.getRestRounds();
 
-        int workoutId = (int) dbHelper.insertWorkout(workoutName, rounds, restExercises, restRounds);
+        int workoutId = dbHelper.insertWorkout(workoutName, rounds, restExercises, restRounds);
         for (int i = 0; i < exerciseIds.size(); i++) {
             dbHelper.insertRelationship(workoutId, exerciseIds.get(i), exerciseReps.get(i));
         }
