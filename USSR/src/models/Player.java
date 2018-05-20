@@ -1,22 +1,13 @@
 package models;
 
-public class Player extends GameObject implements Colliable {
+public class Player extends GameObject {
 
     public Player() {
 
     }
 
-    public Player(int column,int row) {
-        super(column,row);
+    public Player(int column, int row) {
+        super(column, row);
     }
 
-    @Override
-    public GameObject getCollisionObject() {
-        return this;
-    }
-
-    @Override
-    public void onCollide(Colliable col) {
-
-    }
 }

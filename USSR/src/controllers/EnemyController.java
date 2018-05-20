@@ -11,18 +11,20 @@ public abstract class EnemyController extends SingleControllerWithAnimation {
     protected int maxMoveStep = 0;
     protected int moveStep = 0;
 
-    EnemyController(int column,int row) {
+    EnemyController(int column, int row) {
         super();
-        gameObject = new GameObject(column,row);
+        gameObject = new GameObject(column, row);
         gameView = new AnimationView();
-        animationView = (AnimationView)gameView;
+        animationView = (AnimationView) gameView;
     }
 
-    public void draw(Graphics g) {gameView.drawImage(g,gameObject);}
+    public void draw(Graphics g) {
+        gameView.drawImage(g, gameObject);
+    }
 
     public void run() {
         if (GameMap.getInstance().getPlayerTurn()) return;
     }
 
-    abstract Point findDirection(int startColumn,int startRow);
+    abstract Point findDirection(int startColumn, int startRow);
 }

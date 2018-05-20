@@ -16,10 +16,8 @@ public class ImageView implements GameView {
         this.image = im;
     }
 
-    public Image getImage() {return image;}
-
-    public ImageView(Image photo) {
-        this.image = photo;
+    public Image getImage() {
+        return image;
     }
 
     public ImageView(String link) {
@@ -27,7 +25,7 @@ public class ImageView implements GameView {
     }
 
     public void drawImage(Graphics g, GameObject go) {
-        g.drawImage(image,go.getCornerX(),go.getCornerY(),go.getWidth(),go.getHeight(),null);
+        g.drawImage(image, go.getCornerX(), go.getCornerY(), go.getWidth(), go.getHeight(), null);
     }
 
     public void run() {

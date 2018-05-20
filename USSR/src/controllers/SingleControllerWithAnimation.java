@@ -21,23 +21,28 @@ public abstract class SingleControllerWithAnimation extends SingleController {
     }
 
     public void initAnimation() {
-        animationView.setSheet(unitName + "_" + MoveType.fileNameOf(moveType) + ".png",5);
+        animationView.setSheet(unitName + "_" + MoveType.fileNameOf(moveType) + ".png", 5);
     }
 
     protected long lastImage = 0;
+
     protected void moveAnimation() {
-        if (!initAnimation) {initAnimation(); initAnimation = true;}
+        if (!initAnimation) {
+            initAnimation();
+            initAnimation = true;
+        }
         Move moveDirection = Move.create(moveType);
         moveDirection.move(gameObject);
 
+        // period between each rendering
         long now = System.currentTimeMillis();
         if (now - lastImage >= 15) {
-            System.out.println("moving: " + animationView.currentImage);
             animationView.currentImage++;
             lastImage = now;
         }
 
-        //Nếu đã đi >= mục tiêu thì dừng
+        // If you moved past the target, then stop
+        // This check for 2 cases of horizontal movement or vertical movement
         boolean doneMoveHorizontal = (targetPoint.x != beginPoint.x &&
                 (getX() - beginPoint.x) / (targetPoint.x - beginPoint.x) >= 1);
 
@@ -52,8 +57,8 @@ public abstract class SingleControllerWithAnimation extends SingleController {
         }
     }
 
-    public void move(GameObject go,Point target) {
-        if (target.x==getColumn() && target.y==getRow()) return; // do nothing because already there
+    public void move(GameObject go, Point target) {
+        if (target.x == getColumn() && target.y == getRow()) return; // do nothing because already there
         isMoving = true;
         animationView.firstImage = System.currentTimeMillis();
     }

@@ -16,7 +16,7 @@ public class KeyInputListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch(e.getKeyCode()) {
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
                 keyInput.keyLeft = true;
                 break;
@@ -36,7 +36,7 @@ public class KeyInputListener implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        switch(e.getKeyCode()) {
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
                 keyInput.keyLeft = false;
                 break;
