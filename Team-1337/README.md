@@ -9,16 +9,26 @@ Members:
 * Vuong Bao Son - USTHBI7-140
 
 ## Our Project
-* Build a Twitter clone
-* Framework: PHP Laravel
-* Added feature: Facebook streaming.
-* First feature: Login and profile page. Due date: 16/4/2018.
+* Build a Twitter/Facebook clone
+* Framework: Express.js
+* Added Feature: Simpler version, not making things complicated
 
 ## Run the app
 Use command
 ```bash
-php artisan server
+git clone https://github.com/concerned-guy/USTH-SE-2018
+cd USTH-SE-2018/Team-1337
+npm install
+npm start
 ```
 And then, in your favorite browser, visit the following URL
 
-[http://localhost:8000/hello-world](http://localhost:8000/hello-world)
+[http://localhost:3000/](http://localhost:3000/)
+
+## Visit a live version of the site
+
+[http://usth1337.ga/](http://usth1337.ga/)
+
+## Documentation about the making of the website
+
+[https://docs.google.com/document/d/1BkMAwAJzgQK7bDgDXOmnbgv2E52J0ERRMMdMMl3WLgk/edit?usp=sharing](https://docs.google.com/document/d/1BkMAwAJzgQK7bDgDXOmnbgv2E52J0ERRMMdMMl3WLgk/edit?usp=sharing)
