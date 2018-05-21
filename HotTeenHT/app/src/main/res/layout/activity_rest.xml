@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Rest">
+
+    <TextView
+        android:id="@+id/textViewQuickRest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/buttonQuitWorkout"
+        android:layout_alignBaseline="@+id/buttonQuitWorkout"
+        android:layout_alignParentStart="true"
+        android:text="QUICK REST"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/buttonQuitWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/opaque_red"
+        android:text="Quit"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textViewRoundInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonQuitWorkout"
+        android:layout_centerHorizontal="true"
+        android:text="Round 3"
+        android:textSize="30dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewRestTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="191dp"
+        android:text="30"
+        android:textSize="75dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewNextExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSkip"
+        android:layout_alignParentStart="true"
+        android:text="Next: Push up x 10 reps"
+        android:textSize="30dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/buttonSkip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/opaque_red"
+        android:text="SKIP REST"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>

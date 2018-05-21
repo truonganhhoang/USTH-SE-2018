@@ -1,0 +1,4 @@
+{
+  "db_uri": "mongodb+srv://speke:saintsaens@cluster0-jdgaf.mongodb.net/test?retryWrites=true",
+  "logger": true
+}

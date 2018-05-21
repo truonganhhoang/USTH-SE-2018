@@ -1,0 +1,49 @@
+<%- include('layout/header'); %>
+<%- include('layout/navbar', { active: 'signup' }); %>
+
+<div id="signup">
+  <div>
+
+    <h1 class="text-center">Create an account</h1>
+    <div>
+      <p class="text-center">Let's get started! Becoming a member is free and only takes a few seconds.</p>
+      <hr/>
+
+      <%- include('layout/alert'); %>
+
+      <form action="/signup" method="post">
+        <div class="form-group">
+          <label>Full name</label>
+          <input class="form-control" name="fullName" type="text" placeholder="Dr. Mordred Phain" autofocus>
+        </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" name="username" type="text" placeholder="m0rph">
+        </div>
+        <div class="form-group">
+          <label>Choose a password</label>
+          <input class="form-control" name="password" type="password" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label>Confirm password</label>
+          <input class="form-control" name="confirmPassword" type="password" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label>Description <span class="text-muted">(optional, you can change it later)</span></label>
+          <textarea class="form-control" name="description" rows=3 placeholder="Father, husband, scientist, brewer, ..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>
+            <input name="termsAgreement" type="checkbox" value="agreed"> I have read &amp; agree to the <a target="_blank" href="/terms">terms of service</a>.
+          </label>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Create account</button>
+        </div>
+      </form>
+      <p class="text-center">Have an account? <a href="/login">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<%- include('layout/footer'); %>

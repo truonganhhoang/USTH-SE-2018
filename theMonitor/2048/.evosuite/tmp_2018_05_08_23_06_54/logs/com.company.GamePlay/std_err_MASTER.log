@@ -1,0 +1,3 @@
+[MASTER] 23:10:29.991 [main] ERROR ExternalProcessHandler - Class com.company.GamePlay. Clients have not finished yet, although a timeout occurred.
+ClientNode: WRITING_TESTS
+

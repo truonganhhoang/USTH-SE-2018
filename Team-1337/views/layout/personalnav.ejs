@@ -1,0 +1,10 @@
+<% if (typeof isPersonalPage !== 'undefined') { %>
+  <ul class="nav nav-tabs nav-justified">
+    <li <% if (active === 'post') { %>class="active"<% } %>>
+      <a href="/user/<%= user.username %>"><strong>Posts</strong></a>
+    </li>
+    <li <% if (active === 'follow') { %>class="active"<% } %>>
+      <a href="/user/<%= user.username %>/follow"><strong>Followers</strong></a>
+    </li>
+  </ul>
+<% } %>

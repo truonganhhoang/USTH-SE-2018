@@ -1,0 +1,5 @@
+{
+  // "db_uri" : "mongodb+srv://speke:saintsaens@cluster0-jdgaf.mongodb.net/test-test?retryWrites=true",
+  "db_uri": "mongodb://localhost/s-express-test",
+  "logger" : false
+}

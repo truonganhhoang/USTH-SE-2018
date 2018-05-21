@@ -1,0 +1,13 @@
+<% flashSuccess.forEach(function (alert) { %>
+  <div class="alert alert-success fade in">
+    <button class="close" data-dismiss="alert">&times;</button>
+    <strong>Success!</strong> <%= alert %>
+  </div>
+<% }); %>
+
+<% flashError.forEach(function (alert) { %>
+  <div class="alert alert-warning fade in">
+    <button class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong> <%= alert %>
+  </div>
+<% }); %>

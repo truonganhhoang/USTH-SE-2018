@@ -1,10 +1,6 @@
-# USTH SE 2018 
-Just editing the readme file, nothing here yet
+# Repo of Software Engineering course at USTH 2018
 
-- Group members: Nguyen Ngoc Chien, Le Canh Duong, Nguyen Hoang Vu, Pham Minh Duc-041
-- Project: Manage yours tasks and events
-- Inspire from: https://calendar.google.com/calendar/r
-+ First function: login function
-+ Framework: codeigniter
+Google Sheet Link: https://docs.google.com/spreadsheets/d/1XL7uMUkc0zDfJDt0jGNuIj4uO5MDARzvlCzIOCju2QQ/edit#gid=0
 
-link document: https://drive.google.com/file/d/1m6wrA0kl3_o0fgpfmy7onuO4w8iPx0MD/view
+Each group create a folder with name is the name of the group. A readme.md file in each folder should describe the project of that group.
+

@@ -1,0 +1,33 @@
+<%- include('layout/header'); %>
+<%- include('layout/navbar', { active: 'login' }); %>
+
+<div id="login">
+  <div>
+
+    <h1 class="text-center">Are you 1337?</h1>
+    <div>
+      <p class="text-center">If you are, please log in.</p>
+      <hr/>
+
+      <%- include('layout/alert'); %>
+
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" name="username" type="text" placeholder="m0rph" autofocus>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control" name="password" type="password" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </div>
+      </form>
+      <p class="text-center">Don't have an account? <a href="/signup">Sign up</a></p>
+    </div>
+
+  </div>
+</div>
+
+<%- include('layout/footer'); %>

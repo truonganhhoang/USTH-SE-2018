@@ -1,0 +1,39 @@
+<div class="col-md-3">
+
+  <div class="list-group">
+    <div class="profile list-group-item">
+
+      <% if (user.username) { %>
+        <h3><a href="/user/<%= user.username %>"><%= user.fullName %></a></h3>
+      <% } else { %>
+        <h3 class="text-muted">Anonymous</h3>
+      <% }%>
+
+      <p><%- escapeBody(user.description) %></p>
+
+      <% if (user.location) { %>
+        <p><span class="glyphicon glyphicon-map-marker"></span> <%= user.location %></p>
+      <% } %>
+
+      <% if (user.link) { %>
+        <p><span class="glyphicon glyphicon-link"></span> <a target="_blank" href="<%= user.link %>"><%= user.link %></a></p>
+      <% } %>
+
+      <% if (user.quote) { %>
+        <blockquote class="text-right"><%= user.quote %></blockquote>
+      <% } %>
+
+      <% if (user.username && !isFollowing) { %>
+        <form action="/user/<%= user.username %>/follow" method="post">
+          <button id="start-follow" class="btn btn-success btn-block" type="submit"><span class="glyphicon glyphicon-sunglasses"></span> Follow</button>
+        </form>
+      <% } %>
+
+      <% if (user.username && isFollowing) { %>
+        <button class="btn btn-default btn-block" disabled="disabled"><span class="glyphicon glyphicon-ok"></span> Followed</button>
+      <% } %>
+
+    </div>
+  </div>
+
+</div>
