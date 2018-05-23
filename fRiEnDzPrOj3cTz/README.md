@@ -2,7 +2,7 @@
 ## Project: Not Flappy Bird
 * inspired by: [Flappy Bird](https://en.wikipedia.org/wiki/Flappy_Bird) and other retro games
 * using: [Python](https://www.python.org/)
-* first function: the bird movement
+* documentation: https://docs.google.com/document/d/1GVZzRYVdjtyW3bF0Eje5-9yDzqTisPgORe0dm4-KZDQ/edit?usp=sharing
 ## Team: fRiEnDz
 **Members:**
 * Duong Quoc Tue - USTHBI7-156
