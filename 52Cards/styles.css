@@ -1,0 +1,81 @@
+/* allow map to fill viewport */
+html, body, #map-canvas, .container-fluid
+{
+    /* height of these elements */
+    height: 100%;
+
+    /* no margin around these elements */
+    margin: 0;
+
+    /* disable scrollbars */
+    overflow: hidden;
+
+    /* no padding within these elements */
+    padding: 0;
+}
+
+.label
+{
+    color: #000000;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+#form
+{
+    position: absolute;
+    left: 60px;
+    top: 28px;
+}
+
+/* #form */
+/* { */
+/*     position: absolute; */
+/*     top: 28px; */
+/*     width: 100%; */
+/* } */
+/* #form .form-group */
+/* { */
+/*     display: flex; */
+/*     justify-content: center; */
+/* } */
+
+#q
+{
+    background-color: #ffffff !important;
+    width: 250px;
+}
+
+#info
+{
+    margin: 0;
+    overflow: auto;
+}
+#info ul
+{
+    margin-bottom: 0;
+}
+
+/* typeahead.js example */
+.tt-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 250px;
+}
+.tt-suggestion.tt-cursor {
+    background-color: #0097cf;
+    color: #fff;
+    cursor: pointer;
+}
+.tt-suggestion {
+    margin: 0;
+    padding: 6px 12px;
+}
